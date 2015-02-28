@@ -1,5 +1,6 @@
 <template name="toDoList">
-	<div> <a href="{{pathFor 'addToDo'}}"> Add a to do </a> </div>
+	<!-- hide link from user to ensure that they don't try to add to dos without being logged in -->
+	<div> {{#if currentUser}} <a href="{{pathFor 'addToDo'}}"> Add a to do </a> {{/if}} </div>
 	<div>
 	<!-- iterate over the incoming data from toDoList.js -->
 	{{#each toDo}}
