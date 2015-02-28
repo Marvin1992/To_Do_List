@@ -1,5 +1,8 @@
 <template name="toDoItem">
 	<div>
-		<h3> <a href="{{url}}"> {{title}} </a><span> {{domain}} </span> </h3>
+		<h3> <a href="{{url}}"> {{title}} </a>
+		<!-- <span> {{domain}} </span> -->
+		</h3>
+		<a href="{{pathFor 'toDoDetail'}}"> See To Details </a>
 	</div>
 </template>
