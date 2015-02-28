@@ -2,9 +2,11 @@
 
 <template name="layout">
 	<header role="navigation">
-		<a href="{{pathFor 'toDoList'}}"> Back to List Overview </a>
+		{{#if currentUser}} <a href="{{pathFor 'toDoList'}}"> Back to List Overview </a> {{/if}}
 	</header>
 	<div id="main">
-		{{> yield}}
+		{{#if currentUser}}
+			{{> yield}}
+		{{/if}}
 	</div>
 </template>
