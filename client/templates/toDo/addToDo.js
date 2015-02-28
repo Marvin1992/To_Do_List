@@ -1,4 +1,4 @@
-// binding an event handler to the submit form in add_to_do.html template
+// binding an event handler to the submit form in addToDo.html template
 Template.add_to_do.events({
 	'submit form': function(e){
 		// prevent the broswer from submitting the form
@@ -13,6 +13,8 @@ Template.add_to_do.events({
 
 		// the insert function returns a generated _id that has been inserted into the e
 		to_do._id = To_Dos.insert(to_do);
+
+		// tell the router to go the toDoList.html template
 		Router.go('toDoList', to_do);
 	}
 });
