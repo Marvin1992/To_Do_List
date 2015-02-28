@@ -1,12 +1,12 @@
 // binding an event handler to the submit form in addToDo.html template
-Template.add_to_do.events({
+Template.addToDo.events({
 	'submit form': function(e){
 		// prevent the broswer from submitting the form
 		e.preventDefault();
 
 		// create an to_do object
 		var to_do = {
-			title: $(e.target).find('[name=title').val(),
+			title: $(e.target).find('[name=title]').val(),
 			description: $(e.target).find('[name=description]').val(),
 			time: $(e.target).find('[name=time]').val()
 		};
