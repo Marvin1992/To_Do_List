@@ -1,0 +1,10 @@
+<!-- {{> yield}} helper defines a special dynamic zone that will automatically render whichever template corresponds to the current route -->
+
+<template name="layout">
+	<header role="navigation">
+		<a href="{{pathFor 'toDoList'}}"> Back to List Overview </a>
+	</header>
+	<div id="main">
+		{{> yield}}
+	</div>
+</template>
