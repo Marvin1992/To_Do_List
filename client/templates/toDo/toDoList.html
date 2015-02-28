@@ -1,0 +1,9 @@
+<template name="toDoList">
+	<div>
+	<!-- iterate over the incoming data from toDoList.js -->
+	{{#each toDo}}
+		<!-- and display the data in the following form with the toDoItem template -->
+		{{> toDoItem}}
+	{{/each}}
+	</div>
+</template>
