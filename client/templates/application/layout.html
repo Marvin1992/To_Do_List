@@ -5,8 +5,9 @@
 		{{#if currentUser}} <a href="{{pathFor 'toDoList'}}"> Back to List Overview </a> {{/if}}
 	</header>
 	<div id="main">
-		{{#if currentUser}}
+		<!--{{#if currentUser}}
 			{{> yield}}
-		{{/if}}
+		{{/if}}-->
+		{{> yield}}
 	</div>
 </template>

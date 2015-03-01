@@ -1,4 +1,5 @@
 // if there are no To_Dos found on the server
+/*
 if(To_Dos.find().count() === 0) {
 
 	// insert a to do
@@ -9,3 +10,4 @@ if(To_Dos.find().count() === 0) {
 	});
 
 }
+*/
