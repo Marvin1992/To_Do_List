@@ -11,10 +11,13 @@ Template.addToDo.events({
 			time: $(e.target).find('[name=time]').val()
 		};
 
-		// the insert function returns a generated _id that has been inserted into the e
-		to_do._id = To_Dos.insert(to_do);
+		Meteor.call('add_to_do', to_do, function(error,result){
+			// display the error the user and abort
+			if(error)
+				return alert(error.reason);
 
-		// tell the router to go the toDoList.html template
-		Router.go('toDoList', to_do);
+			Router.go('toDoList', {_id: result._id});
+		});
+
 	}
 });
