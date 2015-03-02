@@ -1,6 +1,6 @@
 // grab the To_Dos from the server and send them to the toDoList.html template
 Template.toDoList.helpers({
 	toDo: function() {
-		return To_Dos.find();
+		return To_Dos.find({author: Meteor.users.findOne().username});
 	}
 });
