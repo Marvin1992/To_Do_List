@@ -8,7 +8,8 @@ Template.addToDo.events({
 		var to_do = {
 			title: $(e.target).find('[name=title]').val(),
 			description: $(e.target).find('[name=description]').val(),
-			time: $(e.target).find('[name=time]').val()
+			time: $(e.target).find('[name=time-select]').val(),
+			day_time: $(e.target).find('[name=dayTime-select]').val()
 		};
 
 		Meteor.call('add_to_do', to_do, function(error,result){

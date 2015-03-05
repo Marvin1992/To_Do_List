@@ -9,7 +9,8 @@ Template.toDosEdit.events({
 		var to_do_properties = {
 			title: $(e.target).find('[name=title]').val(),
 			description: $(e.target).find('[name=description]').val(),
-			time: $(e.target).find('[name=time]').val()
+			time: $(e.target).find('[name=time]').val(),
+			day_time: $(e.target).find('[name=dayTime-select]').val()
 		}
 
 		// update the To_Dos in the database by updating the to_do_properties of the currentId

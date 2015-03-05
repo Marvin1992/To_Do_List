@@ -1,8 +1,8 @@
 <template name="toDoItem">
 	<div>
-		<h3> <a href="{{url}}"> {{title}} </a> <!-- <span> {{domain}} </span> --> </h3>
+		<h3> <a href="{{url}}"> {{title}} </a> </h3>
 		<p> Description: {{description}} </p>
-		<h5> I am going to do it at: {{time}} </h5>
+		<h5> I am going to do it at: {{time}} {{day_time}} </h5>
 		<p> Author is: {{author}} </p>
 		<a href="{{pathFor 'toDoDetail'}}"> Click For Details </a>
 
