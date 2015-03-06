@@ -1,0 +1,15 @@
+<template name="dailyList">
+	<ul class="dailyList-ul">
+		{{#each toDo}}
+		<!-- and display the data in the following form with the toDoItem template -->
+			{{> toDoItem}}
+		{{/each}}
+	</ul>
+	<!-- modify how items are listed, when template is called -->
+	<script> 
+		// get a reference to the dailyList-li items
+		var $dailyList_li = $('.dailyList-li');
+
+		// 
+	</script>
+</template>

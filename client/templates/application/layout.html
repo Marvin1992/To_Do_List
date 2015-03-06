@@ -1,13 +1,14 @@
-<!-- {{> yield}} helper defines a special dynamic zone that will automatically render whichever template corresponds to the current route -->
-
 <template name="layout">
 	<header role="navigation">
 		{{#if currentUser}} <a href="{{pathFor 'toDoList'}}"> Back to List Overview </a> {{/if}}
 	</header>
+	<div>
+		<a style="display: inline-block;" href="{{pathFor 'dailyList'}}"> <button>Daily List</button> </a>
+		<a style="display: inline-block;" href="#"> <button>Weekly List</button> </a>
+		<a style="display: inline-block;" href="#"> <button>Monthly List</button> </a>
+	</div>
 	<div id="main">
-		<!--{{#if currentUser}}
-			{{> yield}}
-		{{/if}}-->
+		<!-- {{> yield}} helper defines a special dynamic zone that will automatically render whichever template corresponds to the current route -->
 		{{> yield}}
 	</div>
 </template>
