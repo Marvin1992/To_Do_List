@@ -76,12 +76,22 @@ Template.toDoItem.rendered = function(){
 			return false;
 		}
 
+		var moveElement = function(i){
+			//alert(i);
+			$("ul").find("[data-timeslot='5 pm']");
+			// move to specific spot
+		}
+
 		// create the missing list items dynamically
 		var create_empty_list = function(){
 			for(var i=1; i < 25; i++){
 
 				// if check_elem is true, do not insert a new element
-				if(check_elem(i)) continue;
+				if(check_elem(i)){
+					// call function that moves existing to do element here
+					moveElement(i);
+					continue;
+				}
 
 				// create new empty list item
 				$li_item = $('<li>');

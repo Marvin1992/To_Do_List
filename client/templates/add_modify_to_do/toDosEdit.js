@@ -20,7 +20,7 @@ Template.toDosEdit.events({
 				alert(error.reason);
 			} else {
 				// go back to the overview of to dos
-				Router.go('toDoList', {_id: currentToDoId});
+				Router.go('emptyTemplate', {_id: currentToDoId});
 			}
 		});
 	},
