@@ -92,6 +92,7 @@ Template.toDoItem.rendered = function(){
 			return false;
 		}
 
+		// move the element to its specific point within the list
 		var moveElement = function(i){
 			// find the to-do
 			var $currentToDo = $("ul").find("[data-timeslot='"+convertTimeBack(i)+"']");
