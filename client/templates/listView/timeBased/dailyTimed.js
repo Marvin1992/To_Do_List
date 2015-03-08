@@ -56,6 +56,22 @@ Template.toDoItem.rendered = function(){
 			return newTime;
 		}
 
+		// function to convert back from military time to US time
+		var convertTimeBack = function(militaryTime){
+			var m = militaryTime;
+			var newTime;
+
+			if(m < 12){
+				newTime = m + " am";
+			} else if(m == 12){
+				newTime = m + " pm";
+			} else if(m > 12){
+				newTime = m-12 + " pm";
+			}
+
+			return newTime;
+		}
+
 		// write data attributes of the list into array
 		for(var i=0; i< $dailyList_li.length; i++){
 			// first split the data set into two and convert the pm time to the 24:00 system
@@ -77,9 +93,11 @@ Template.toDoItem.rendered = function(){
 		}
 
 		var moveElement = function(i){
-			//alert(i);
-			$("ul").find("[data-timeslot='5 pm']");
-			// move to specific spot
+			// find the to-do
+			var $currentToDo = $("ul").find("[data-timeslot='"+convertTimeBack(i)+"']");
+
+			// move the to-do to its right place
+			$dailyList_ul.append($currentToDo);
 		}
 
 		// create the missing list items dynamically

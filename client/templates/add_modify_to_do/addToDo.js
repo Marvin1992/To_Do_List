@@ -17,7 +17,7 @@ Template.addToDo.events({
 			if(error)
 				return alert(error.reason);
 
-			Router.go('toDoList', {_id: result._id});
+			Router.go('emptyTemplate', {_id: result._id});
 		});
 
 	}
