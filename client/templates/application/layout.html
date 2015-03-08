@@ -1,8 +1,10 @@
 <template name="layout">
 	<header role="navigation">
-		{{#if currentUser}} <a href="{{pathFor 'toDoList'}}"> Back to List Overview </a> {{/if}}
+		{{#if currentUser}} <a href="{{pathFor 'toDoList'}}"> Home </a> {{/if}}
+		<div> {{#if currentUser}} <a href="{{pathFor 'addToDo'}}"> + To Do </a> {{/if}} </div>
 	</header>
 	<div>
+	{{#if currentUser}}
 		<ul>
 			<li> Switch View
 				<ul>
@@ -11,9 +13,12 @@
 				</ul>
 			</li>
 		</ul>
+	{{/if}}
 	</div>
 	<div id="main">
+	{{#if currentUser}}
 		<!-- {{> yield}} helper defines a special dynamic zone that will automatically render whichever template corresponds to the current route -->
 		{{> yield}}
+	{{/if}}
 	</div>
 </template>
