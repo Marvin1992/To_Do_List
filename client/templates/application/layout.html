@@ -3,9 +3,14 @@
 		{{#if currentUser}} <a href="{{pathFor 'toDoList'}}"> Back to List Overview </a> {{/if}}
 	</header>
 	<div>
-		<a style="display: inline-block;" href="{{pathFor 'dailyList'}}"> <button>Daily List</button> </a>
-		<a style="display: inline-block;" href="#"> <button>Weekly List</button> </a>
-		<a style="display: inline-block;" href="#"> <button>Monthly List</button> </a>
+		<ul>
+			<li> Switch View
+				<ul>
+					<li> <a href="{{pathFor 'timeBased'}}"> Time Based View </a> </li>
+					<li> <a href="{{pathFor 'listView'}}"> List View </a> </li>
+				</ul>
+			</li>
+		</ul>
 	</div>
 	<div id="main">
 		<!-- {{> yield}} helper defines a special dynamic zone that will automatically render whichever template corresponds to the current route -->
