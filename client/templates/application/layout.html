@@ -1,6 +1,6 @@
 <template name="layout">
 	<header role="navigation">
-		{{#if currentUser}} <a href="{{pathFor 'toDoList'}}"> Home </a> {{/if}}
+		{{#if currentUser}} <a href="{{pathFor 'emptyTemplate'}}"> Home </a> {{/if}}
 		<div> {{#if currentUser}} <a href="{{pathFor 'addToDo'}}"> + To Do </a> {{/if}} </div>
 	</header>
 	<div>
