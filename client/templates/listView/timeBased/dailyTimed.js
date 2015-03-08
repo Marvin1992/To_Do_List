@@ -120,7 +120,11 @@ Template.toDoItem.rendered = function(){
 				// add data attribute to list item
 				$li_item.data("timeslot", i);
 
-				$li_item.text(i+':00'); // currently used for debugging ****
+				// add empty time slot
+				$li_item.text(convertTimeBack(i)); 
+
+				// military time 
+				//$li_item.text(i + ":00"); 
 
 				// append the li items to the unodered list
 				$dailyList_ul.append($li_item);
