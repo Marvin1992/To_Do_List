@@ -1,4 +1,8 @@
 <template name="dailyList">
 	<div> {{> listView}} </div>
-	<p> this is dailyList </p>
+	<ul class="dailyList-ul">
+		{{#each toDo}}
+			{{> toDoItem}}
+		{{/each}}
+	</ul>
 </template>

@@ -10,6 +10,7 @@ Template.addToDo.events({
 			description: $(e.target).find('[name=description]').val(),
 			time: $(e.target).find('[name=time-select]').val(),
 			day_time: $(e.target).find('[name=dayTime-select]').val(),
+			checked: "not-checked"
 		};
 
 		Meteor.call('add_to_do', to_do, function(error,result){
