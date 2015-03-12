@@ -1,6 +1,7 @@
 Template.dailyTimed.helpers({
 	toDo: function() {
 		var user = Meteor.users.findOne();
+		var today = new Date();
 		if(user){
 			// return the daily To_Dos later here
 			return To_Dos.find({author: user.username});
@@ -20,7 +21,7 @@ Template.toDoItem.rendered = function(){
 		var $dailyTimed_ul = $('.dailyTimed-ul');
 
 		// get a reference to the current list elements (to-dos) created from the database
-		var $dailyTimed_li = $('.daily-li');
+		var $dailyTimed_li = $('.daily-li'); 
 
 		// store data attributes in array
 		var data_values = [];
@@ -138,7 +139,11 @@ Template.toDoItem.rendered = function(){
 			// create an empty list around the existing to dos
 			create_empty_list();
 		} else {
+			// log the data values to console
 			console.log(data_values[0]);
+
+			// create a completely empty list
+			create_empty_list();
 		}
 
 	// even a delay of 0ms helps rendering the list
