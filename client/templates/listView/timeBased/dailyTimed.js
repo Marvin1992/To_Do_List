@@ -140,7 +140,7 @@ Template.toDoItem.rendered = function(){
 			create_empty_list();
 		} else {
 			// log the data values to console
-			console.log(data_values[0]);
+			console.log("To-do has no timeslot assigned.");
 
 			// create a completely empty list
 			create_empty_list();
