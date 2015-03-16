@@ -1,50 +1,50 @@
 <template name="weeklyTimed">
 	<div> {{> timeBased}} </div>
-	<section id="weeklyTimed-section">
+	<section class="weeklyTimed-section" id="weeklyTimed-section">
 	<!-- Three Days Ago-->
-		<ul id="threeDaysAgo-ul">
+		<ul class="weeklyTimed-ul" id="threeDaysAgo-timed-ul">
 			<div> Three Days Ago </div>
 			{{#each threeDaysAgo}}
 				{{> toDoItem}}
 			{{/each}}
 		</ul>
 	<!-- Two Days Ago-->
-		<ul id="twoDaysAgo-ul">
+		<ul class="weeklyTimed-ul" id="twoDaysAgo-timed-ul">
 			<div> Two Days Ago </div>
 			{{#each twoDaysAgo}}
 				{{> toDoItem}}
 			{{/each}}
 		</ul>
 	<!-- Yesterday-->
-		<ul id="yesterday-ul">
+		<ul class="weeklyTimed-ul" id="yesterday-timed-ul">
 			<div> Yesterday </div>
 			{{#each yesterday}}
 				{{> toDoItem}}
 			{{/each}}
 		</ul>
 	<!-- Today-->
-		<ul id="toDoToday-ul">
+		<ul class="weeklyTimed-ul" id="toDoToday-timed-ul">
 			<div> Today </div>
 			{{#each toDoToday}}
 				{{> toDoItem}}
 			{{/each}}
 		</ul>
 	<!-- Tomorrow-->
-		<ul id="tomorrow-ul">
+		<ul class="weeklyTimed-ul" id="tomorrow-timed-ul">
 			<div> Tomorrow </div>
 			{{#each tomorrow}}
 				{{> toDoItem}}
 			{{/each}}
 		</ul>
 	<!-- In Two Days-->
-		<ul id="inTwoDays-ul">
+		<ul class="weeklyTimed-ul" id="inTwoDays-timed-ul">
 			<div> In Two Days </div>
 			{{#each inTwoDays}}
 				{{> toDoItem}}
 			{{/each}}
 		</ul>
 	<!-- In Three Days-->
-		<ul id="inThreeDays-ul">
+		<ul class="weeklyTimed-ul" id="inThreeDays-timed-ul">
 			<div> In Three Days </div>
 			{{#each inThreeDays}}
 				{{> toDoItem}}

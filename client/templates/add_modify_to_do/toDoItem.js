@@ -50,13 +50,13 @@ Template.toDoItem.rendered = function(){
 	Meteor.setTimeout(function(){
 
 		// get a reference to the ul lists
-		var $threeDaysAgo_ul = $('#threeDaysAgo-ul');
-		var $twoDaysAgo_ul = $('#twoDaysAgo-ul');
-		var $yesterday_ul = $('#toDoToday-ul');
-		var $today_ul = $('#toDoToday-ul');
-		var $tomorrow_ul = $('#tomorrow-ul');
-		var $inTwoDays_ul = $('#inTwoDays-ul');
-		var $inThreeDays_ul = $('#inThreeDays-ul');
+		var $threeDaysAgo_ul = $('#threeDaysAgo-timed-ul');
+		var $twoDaysAgo_ul = $('#twoDaysAgo-timed-ul');
+		var $yesterday_ul = $('#yesterday-timed-ul');
+		var $today_ul = $('#toDoToday-timed-ul');
+		var $tomorrow_ul = $('#tomorrow-timed-ul');
+		var $inTwoDays_ul = $('#inTwoDays-timed-ul');
+		var $inThreeDays_ul = $('#inThreeDays-timed-ul');
 
 		// get the user's current day
 		var currentDate = new Date();
@@ -199,17 +199,8 @@ Template.toDoItem.rendered = function(){
 				}
 			} 
 
-			// check for existing To_Dos coming from the server
-			if(typeof data_values[0] !== 'undefined' && data_values[0] !== null){
-				// create an empty list around the existing to dos
-				create_empty_list();
-			} else {
-				// log the data values to console
-				// console.log("To-do has no timeslot assigned.");
-
-				// create a completely empty list
-				create_empty_list();
-			}
+		// create the list placeholders and set to-do from server to right place
+		create_empty_list();
 
 		} // end of makeLists function
 
@@ -222,7 +213,7 @@ Template.toDoItem.rendered = function(){
 	makeLists($yesterday, $yesterday_ul);
 	makeLists($today, $today_ul);
 	makeLists($tomorrow, $tomorrow_ul);
-	makeLists($inTwoDays, $inThreeDays_ul);
+	makeLists($inTwoDays, $inTwoDays_ul);
 	makeLists($inThreeDays, $inThreeDays_ul);
 
 	// even a delay of 0ms helps rendering the list

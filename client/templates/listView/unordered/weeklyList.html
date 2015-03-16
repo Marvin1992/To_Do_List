@@ -1,44 +1,44 @@
 <template name="weeklyList">
 	<div> {{> listView}} </div>
-	<section id="weekyTimed-section">
+	<section class="weeklyList-section" id="weeklyList-section">
 	<!-- Three Days Ago-->
-		<ul id="threeDaysAgo-ul">
+		<ul class="weeklyList-ul" id="threeDaysAgo-list-ul">
 			{{#each threeDaysAgo}}
 				{{> toDoItem}}
 			{{/each}}
 		</ul>
 	<!-- Two Days Ago-->
-		<ul id="twoDaysAgo-ul">
+		<ul class="weeklyList-ul" id="twoDaysAgo-list-ul">
 			{{#each twoDaysAgo}}
 				{{> toDoItem}}
 			{{/each}}
 		</ul>
 	<!-- Yesterday-->
-		<ul id="yesterday-ul">
+		<ul class="weeklyList-ul" id="yesterday-list-ul">
 			{{#each yesterday}}
 				{{> toDoItem}}
 			{{/each}}
 		</ul>
 	<!-- Today-->
-		<ul id="toDoToday-ul">
+		<ul class="weeklyList-ul" id="toDoToday-list-ul">
 			{{#each toDoToday}}
 				{{> toDoItem}}
 			{{/each}}
 		</ul>
 	<!-- Tomorrow-->
-		<ul id="tomorrow-ul">
+		<ul class="weeklyList-ul" id="tomorrow-list-ul">
 			{{#each tomorrow}}
 				{{> toDoItem}}
 			{{/each}}
 		</ul>
 	<!-- In Two Days-->
-		<ul id="inTwoDays-ul">
+		<ul class="weeklyList-ul" id="inTwoDays-list-ul">
 			{{#each inTwoDays}}
 				{{> toDoItem}}
 			{{/each}}
 		</ul>
 	<!-- In Three Days-->
-		<ul id="inThreeDays-ul">
+		<ul class="weeklyList-ul" id="inThreeDays-list-ul">
 			{{#each inThreeDays}}
 				{{> toDoItem}}
 			{{/each}}
