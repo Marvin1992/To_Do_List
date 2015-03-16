@@ -37,7 +37,7 @@ Template.toDosEdit.events({
 			To_Dos.remove(currentToDoId);
 
 			// go back to the overview of to dos
-			Router.go('toDoList');
+			Router.go('emptyTemplate');
 		}
 	}
 });

@@ -34,7 +34,7 @@ Template.toDoItem.events({
 				alert(error.reason);
 			} else {
 				// reload page
-				Router.go('dailyTimed', {_id: currentToDoId});
+				// Router.go('dailyTimed', {_id: currentToDoId});
 			}
 		});
 
@@ -84,6 +84,9 @@ Template.toDoItem.rendered = function(){
 		var $tomorrow = $tomorrow_ul.find("li[data-date*='"+_tomorrow+"']");
 		var $inTwoDays = $inTwoDays_ul.find("li[data-date*='"+_inTwoDays+"']");
 		var $inThreeDays = $inThreeDays_ul.find("li[data-date*='"+_inThreeDays+"']");
+
+		// get a reference to the <li> in the to-do from today of dailyTimed
+		// var $dailyTimed = $dailyTimed_ul.find("li[data-date*='"+_day+"']"); ****
 
 
 	// function that creates our time ordered layout and puts to dos in the right list
@@ -162,7 +165,7 @@ Template.toDoItem.rendered = function(){
 			// move the element to its specific point within the list
 			var moveElement = function(i){
 				// find the to-do
-				var $currentToDo = $("ul").find("[data-timeslot='"+convertTimeBack(i)+"']");
+				var $currentToDo = $_ul.find("[data-timeslot='"+convertTimeBack(i)+"']");
 
 				// move the to-do to its right place
 				$_ul.append($currentToDo);
