@@ -1,7 +1,7 @@
 <template name="dailyTimed">
 	<div> {{> timeBased}} </div>
 	<ul class="dailyTimed-ul">
-		{{#each toDo}}
+		{{#each toDoToday}}
 			{{> toDoItem}}
 		{{/each}}
 	</ul>

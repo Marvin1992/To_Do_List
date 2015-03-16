@@ -1,4 +1,54 @@
 <template name="weeklyTimed">
 	<div> {{> timeBased}} </div>
-	<p> this is weekly timed </p>
+	<section id="weeklyTimed-section">
+	<!-- Three Days Ago-->
+		<ul id="threeDaysAgo-ul">
+			<div> Three Days Ago </div>
+			{{#each threeDaysAgo}}
+				{{> toDoItem}}
+			{{/each}}
+		</ul>
+	<!-- Two Days Ago-->
+		<ul id="twoDaysAgo-ul">
+			<div> Two Days Ago </div>
+			{{#each twoDaysAgo}}
+				{{> toDoItem}}
+			{{/each}}
+		</ul>
+	<!-- Yesterday-->
+		<ul id="yesterday-ul">
+			<div> Yesterday </div>
+			{{#each yesterday}}
+				{{> toDoItem}}
+			{{/each}}
+		</ul>
+	<!-- Today-->
+		<ul id="toDoToday-ul">
+			<div> Today </div>
+			{{#each toDoToday}}
+				{{> toDoItem}}
+			{{/each}}
+		</ul>
+	<!-- Tomorrow-->
+		<ul id="tomorrow-ul">
+			<div> Tomorrow </div>
+			{{#each tomorrow}}
+				{{> toDoItem}}
+			{{/each}}
+		</ul>
+	<!-- In Two Days-->
+		<ul id="inTwoDays-ul">
+			<div> In Two Days </div>
+			{{#each inTwoDays}}
+				{{> toDoItem}}
+			{{/each}}
+		</ul>
+	<!-- In Three Days-->
+		<ul id="inThreeDays-ul">
+			<div> In Three Days </div>
+			{{#each inThreeDays}}
+				{{> toDoItem}}
+			{{/each}}
+		</ul>
+	</section>
 </template>

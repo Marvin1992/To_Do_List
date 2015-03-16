@@ -1,20 +1,27 @@
 Template.dailyTimed.helpers({
-	toDo: function() {
+	toDoToday: function() {
+		// get the current user
 		var user = Meteor.users.findOne();
-		var today = new Date();
+
+		// get the user's day
+		var currentDate = new Date();
+		var _day = currentDate.getDate();
+		var _month = currentDate.getMonth() + 1;
+		var _year = currentDate.getFullYear();
+
 		if(user){
-			// return the daily To_Dos later here
-			return To_Dos.find({author: user.username});
+			// return the to-dos for today that belong to the current user
+			return To_Dos.find({author: user.username, day: _day, month: _month, year: _year});
 		}
 	}
 });
 
-
+/*
 // if the list has been rendered
 // Template rendered callback
 Template.toDoItem.rendered = function(){
 
-/* HAS TO BE EXECUTED AFTER DOM HAS RENDERED */
+// HAS TO BE EXECUTED AFTER DOM HAS RENDERED 
 	Meteor.setTimeout(function(){
 
 		// get a reference to the dailyList-ul
@@ -96,7 +103,7 @@ Template.toDoItem.rendered = function(){
 
 		// move the element to its specific point within the list
 		var moveElement = function(i){
-			// find the to-do
+			// find the to-do in the dailyTimed list
 			var $currentToDo = $("ul").find("[data-timeslot='"+convertTimeBack(i)+"']");
 
 			// move the to-do to its right place
@@ -149,3 +156,4 @@ Template.toDoItem.rendered = function(){
 	// even a delay of 0ms helps rendering the list
 	}, 0);
 }
+*/

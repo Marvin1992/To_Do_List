@@ -1,5 +1,5 @@
 <template name="toDoItem">
-	<li class="daily-li" data-timeslot="{{time}} {{day_time}}">
+	<li class="daily-li" data-timeslot="{{time}} {{day_time}}" data-date="{{day}} {{month}} {{year}}">
 		<h3> {{title}} </h3>
 		<p> Description: {{description}} </p>
 		<h5> Set time: {{time}} {{day_time}} </h5>
@@ -8,7 +8,6 @@
 		<div> <button id="checked"> Is: {{checked}} </button> </div>
 
 		<!-- following div only temp -->
-		<div> day submitted: {{day}} </div>
-		<div> submitted: {{submitted}} </div>
+		<div> date submitted: {{day}}/{{month}}/{{year}}</div>
 	</li>
 </template>

@@ -1,4 +1,47 @@
 <template name="weeklyList">
 	<div> {{> listView}} </div>
-	<p> this is weekly list </p>
+	<section id="weekyTimed-section">
+	<!-- Three Days Ago-->
+		<ul id="threeDaysAgo-ul">
+			{{#each threeDaysAgo}}
+				{{> toDoItem}}
+			{{/each}}
+		</ul>
+	<!-- Two Days Ago-->
+		<ul id="twoDaysAgo-ul">
+			{{#each twoDaysAgo}}
+				{{> toDoItem}}
+			{{/each}}
+		</ul>
+	<!-- Yesterday-->
+		<ul id="yesterday-ul">
+			{{#each yesterday}}
+				{{> toDoItem}}
+			{{/each}}
+		</ul>
+	<!-- Today-->
+		<ul id="toDoToday-ul">
+			{{#each toDoToday}}
+				{{> toDoItem}}
+			{{/each}}
+		</ul>
+	<!-- Tomorrow-->
+		<ul id="tomorrow-ul">
+			{{#each tomorrow}}
+				{{> toDoItem}}
+			{{/each}}
+		</ul>
+	<!-- In Two Days-->
+		<ul id="inTwoDays-ul">
+			{{#each inTwoDays}}
+				{{> toDoItem}}
+			{{/each}}
+		</ul>
+	<!-- In Three Days-->
+		<ul id="inThreeDays-ul">
+			{{#each inThreeDays}}
+				{{> toDoItem}}
+			{{/each}}
+		</ul>
+	</section>
 </template>
