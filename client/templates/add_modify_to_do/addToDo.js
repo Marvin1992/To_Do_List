@@ -4,12 +4,44 @@ Template.addToDo.events({
 		// prevent the broswer from submitting the form
 		e.preventDefault();
 
+		// get the user's day
+		var currentDate = new Date();
+		var _day = currentDate.getDate();
+		var _month = currentDate.getMonth() + 1;
+		var _year = currentDate.getFullYear();
+
+		var _selectedDay;
+		var _selectedMonth; 
+		var _selectedYear;
+
+		// assign today's value to the to-do if the user didn't put a date
+		if($(e.target).find('[name=day-select]').val() === ''){
+			_selectedDay = _day;
+		} else {
+			_selectedDay = $(e.target).find('[name=day-select]').val();
+		}
+
+		if($(e.target).find('[name=month-select]').val() === ''){
+			_selectedMonth = _month;
+		} else {
+			_selectedMonth = $(e.target).find('[name=month-select]').val();
+		}
+
+		if($(e.target).find('[name=year-select]').val() === ''){
+			_selectedYear = _year;
+		} else {
+			_selectedYear = $(e.target).find('[name=year-select]').val();
+		}
+
 		// create an to_do object
 		var to_do = {
 			title: $(e.target).find('[name=title]').val(),
 			description: $(e.target).find('[name=description]').val(),
 			time: $(e.target).find('[name=time-select]').val(),
 			day_time: $(e.target).find('[name=dayTime-select]').val(),
+			day: Number(_selectedDay),
+			month: Number(_selectedMonth),
+			year: Number(_selectedYear),
 			checked: "not-checked"
 		};
 
