@@ -10,7 +10,7 @@ Template.dailyList.helpers({
 		var _year = currentDate.getFullYear();
 
 		// today
-		console.log(_day+"/"+_month+"/"+_year);
+		console.log("Today is: "+_day+"/"+_month+"/"+_year);
 
 		if(user){
 			// return the to-dos for today that belong to the current user
