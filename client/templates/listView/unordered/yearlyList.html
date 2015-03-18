@@ -1,0 +1,11 @@
+<template name="yearlyList">
+	<div> {{> listView}} </div>
+	<select name="yearly-select" id="yearly-select">
+    	<option></option>
+    </select>
+	<ul class="yearlyList-ul" id="yearly-list-ul">
+		{{#each yearly}}
+			{{> toDoItem}}
+		{{/each}}
+	</ul>
+</template>
