@@ -106,3 +106,17 @@ Template.weeklyTimed.helpers({
 		}
 	}	
 });
+
+
+Template.weeklyTimed.events({
+	'click #weeklyTimed-section': function(event){
+
+		// jQuery target
+		var target = $(event.target);
+
+		// check if the selected target is a dailyelement
+		if(target.hasClass('daily-li')){
+			alert(target.data("timeslot") +":00" + "  listName: " + target.parent()[0].id);
+		}
+	}
+})

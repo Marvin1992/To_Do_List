@@ -2,6 +2,24 @@
 var _deps = new Tracker.Dependency;
 
 
+Template.yearlyList.events({
+	'change #yearly-select': function(){
+		// get the current user
+		var user = Meteor.users.findOne();
+
+		// get the year the used selected
+		var userSelection = $('#yearly-select').val();
+		var _year = Number(userSelection);
+
+		// if the _year variable has been filled with the user's selection
+		Session.set('selectedYear', _year);
+
+		// notifying everyone that is dependent on _deps that it has changes
+		_deps.changed();
+	}
+});
+
+
 Template.yearlyList.helpers({
 	yearly: function() {
 
@@ -19,7 +37,7 @@ Template.yearlyList.helpers({
 		if(_year){
 			if(user){
 				// return the to-dos for today that belong to the current user
-				return Session.get(yearlyToDos);
+				return To_Dos.find({author: user.username, year: Session.get('selectedYear')});
 			}
 		}
 	}
@@ -52,26 +70,3 @@ Template.yearlyList.created = function(){
 	// even a delay of 0ms helps rendering
 	}, 0);
 }
-
-
-Tracker.autorun(function () {
-	// get the current user
-	var user = Meteor.users.findOne();
-
-	// get the year the used selected
-	var userSelection = $('#yearly-select').val();
-	var _year = Number(userSelection);
-
-	// notifying everyone that is dependent on _deps that it has changes
-	if(userSelection !== "") { 
-		_deps.changed();
-	}
-		
-	var yearlyToDos = function(){
-		return To_Dos.find({author: user.username, year: _year});
-	}
-
-	Session.set(yearlyToDos);
-
-	return userSelection;
-});
