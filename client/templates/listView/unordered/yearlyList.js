@@ -19,7 +19,7 @@ Template.yearlyList.helpers({
 		if(_year){
 			if(user){
 				// return the to-dos for today that belong to the current user
-				return Session.equals("selectedYear", To_Dos.find({author: user.username, year: _year}) );
+				return Session.get(yearlyToDos);
 			}
 		}
 	}
@@ -55,15 +55,23 @@ Template.yearlyList.created = function(){
 
 
 Tracker.autorun(function () {
+	// get the current user
+	var user = Meteor.users.findOne();
+
 	// get the year the used selected
 	var userSelection = $('#yearly-select').val();
+	var _year = Number(userSelection);
 
 	// notifying everyone that is dependent on _deps that it has changes
 	if(userSelection !== "") { 
 		_deps.changed();
 	}
+		
+	var yearlyToDos = function(){
+		return To_Dos.find({author: user.username, year: _year});
+	}
 
-	Session.set("selectedYear", userSelection);
+	Session.set(yearlyToDos);
 
 	return userSelection;
 });
