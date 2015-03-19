@@ -36,9 +36,8 @@ Template.weeklyTimed.events({
 
 		// check if the selected target is a dailyelement
 		if(target.hasClass('daily-li')){
-			alert(target.data("timeslot") +":00" + "  listName: " + target.parent()[0].id);
-			Router.go('addToDo', 
-				{selectedTime: target.data("timeslot")}, {query: target.parent()[0].id} );
+			// pass onlick the selected time and list to the addToDo template
+			Router.go('addToDo', {foo: 'bar'}, {hash: target.data("timeslot"), query: target.parent()[0].id } );
 		}
 	}
 });

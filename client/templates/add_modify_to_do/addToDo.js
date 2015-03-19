@@ -1,3 +1,37 @@
+var getData = function(){
+	// get the data from the URL
+	var listName = Router.current().params.query;
+	var timeSlot = Router.current().params.hash;
+
+	// get the key name of the listName object
+	for(property in listName){
+		// write the key name into the listName variable
+		listName = property;
+	}
+
+    return {
+        name: listName,
+        time: timeSlot
+    };
+}
+
+// function to convert back from military time to US time
+var convertTimeBack = function(militaryTime){
+	var m = militaryTime;
+	var newTime;
+
+	if(m < 12){
+		newTime = m + " am";
+	} else if(m == 12){
+		newTime = m + " pm";
+	} else if(m > 12){
+		newTime = m-12 + " pm";
+	}
+
+	return newTime;
+}
+
+
 // binding an event handler to the submit form in addToDo.html template
 Template.addToDo.events({
 	'submit form': function(e){
@@ -57,7 +91,7 @@ Template.addToDo.events({
 });
 
 
-Template.addToDo.rendered = function(){
+Template.addToDo.created = function(){
 
 	Meteor.setTimeout(function(){
 
@@ -118,4 +152,34 @@ Template.addToDo.rendered = function(){
 
 	// even a delay of 0ms helps rendering
 	}, 0);
+
+}
+
+
+Template.addToDo.rendered = function(){
+	// run the getData() function to retrieve the data from the url
+	var data = getData();
+
+	// ensure that we only insert data into our addToDo properties
+	// if the data has been routed here
+	if(data.time != null){
+
+		// get the user's day
+		var currentDate = new Date();
+		var _day = currentDate.getDate();
+		var _month = currentDate.getMonth() + 1;
+		var _year = currentDate.getFullYear();
+
+		var newTime = convertTimeBack(data.time); 
+		var time = newTime.split(" ")[0];
+		var dayTime = newTime.split(" ")[1];
+
+		// fill our form with the information coming from the router.go parameters
+		// $('#day-select').val() = _day; /* depends on data.name */
+		$('#month-select').val(_month);
+		$('#year-select').val(_year);
+
+		$('#time-select').val(time);
+		$('#dayTime-select').val(dayTime);
+	}
 }
