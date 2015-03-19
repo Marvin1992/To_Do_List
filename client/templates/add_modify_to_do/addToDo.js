@@ -157,29 +157,63 @@ Template.addToDo.created = function(){
 
 
 Template.addToDo.rendered = function(){
-	// run the getData() function to retrieve the data from the url
-	var data = getData();
 
-	// ensure that we only insert data into our addToDo properties
-	// if the data has been routed here
-	if(data.time != null){
+	Meteor.setTimeout(function(){
+		// run the getData() function to retrieve the data from the url
+		var data = getData();
 
-		// get the user's day
-		var currentDate = new Date();
-		var _day = currentDate.getDate();
-		var _month = currentDate.getMonth() + 1;
-		var _year = currentDate.getFullYear();
+		// ensure that we only insert data into our addToDo properties
+		// if the data has been routed here
+		if(data.time != null){
 
-		var newTime = convertTimeBack(data.time); 
-		var time = newTime.split(" ")[0];
-		var dayTime = newTime.split(" ")[1];
+			// get the user's day
+			var currentDate = new Date();
+			var _day = currentDate.getDate();
+			var _month = currentDate.getMonth() + 1;
+			var _year = currentDate.getFullYear();
 
-		// fill our form with the information coming from the router.go parameters
-		// $('#day-select').val() = _day; /* depends on data.name */
-		$('#month-select').val(_month);
-		$('#year-select').val(_year);
+			// prepare the time from the parameter of router.go for the selection
+			var newTime = convertTimeBack(data.time); 
+			var time = newTime.split(" ")[0];
+			var dayTime = newTime.split(" ")[1];
 
-		$('#time-select').val(time);
-		$('#dayTime-select').val(dayTime);
-	}
+			// declare an empty variable
+			var inputDay;
+
+			// get the first word from the string
+			var dataName = data.name.split("-")[0];
+
+			// convert our string into a time reference
+			if(dataName == "threeDaysAgo") { 
+				inputDay = _day-3;
+			} else if(dataName == "twoDaysAgo"){
+				inputDay = _day-2;
+			} else if(dataName == "yesterday"){
+				inputDay = _day-1;
+			} else if(dataName == "toDoToday"){
+				inputDay = _day;
+			} else if(dataName == "tomorrow"){
+				inputDay = _day+1;
+			} else if(dataName == "inTwoDays"){
+				inputDay = _day+2;
+			} else if(dataName == "inThreeDays"){
+				inputDay = _day+3;
+			}
+
+			// convert our numbers to string in order to insert them
+			var sInputDay = inputDay.toString();
+			var s_month = _month.toString();
+			var s_year = _year.toString();
+
+			// fill our form with the information coming from the router.go parameters
+			$('#day-select').val(sInputDay);
+			$('#month-select').val(s_month);
+			$('#year-select').val(s_year);
+
+			$('#time-select').val(time);
+			$('#dayTime-select').val(dayTime);
+		}
+
+	// even a delay of 0ms helps rendering
+	}, 0);
 }
