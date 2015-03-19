@@ -1,5 +1,5 @@
 // create a tracker dependency
-var _deps = new Tracker.Dependency;
+var selectedYear_deps = new Tracker.Dependency;
 
 
 Template.yearlyList.events({
@@ -15,7 +15,7 @@ Template.yearlyList.events({
 		Session.set('selectedYear', _year);
 
 		// notifying everyone that is dependent on _deps that it has changes
-		_deps.changed();
+		selectedYear_deps.changed();
 	}
 });
 
@@ -24,7 +24,7 @@ Template.yearlyList.helpers({
 	yearly: function() {
 
 		// creates a dependency between the accessor of "yearly" and the _deps
-		_deps.depend();
+		selectedYear_deps.depend();
 
 		// get the current user
 		var user = Meteor.users.findOne();
