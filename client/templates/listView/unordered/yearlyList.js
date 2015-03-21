@@ -37,7 +37,7 @@ Template.yearlyList.helpers({
 		if(_year){
 			if(user){
 				// return the to-dos for today that belong to the current user
-				return To_Dos.find({author: user.username, year: Session.get('selectedYear')});
+				return To_Dos.find({author: user.username, year: Session.get('selectedYear')}, {sort: {month: -1, day: -1}});
 			}
 		}
 	}
