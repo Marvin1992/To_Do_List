@@ -55,6 +55,12 @@ Template.toDoItemMonthly.rendered = function(){
 			// calculate how many days there are in this current year
 			var calenderLength = daysInMonth(month, year); 
 
+			// reference our new list
+			var $dynamicList;
+
+			// server to-dos
+			var $serverToDos;
+
 			// create number of calendar slots matching the calenderLength variable
 			for(var i=1; i<calenderLength+1; i++){
 				// create new <ul> element and append it to the $monthyTimed_ul
@@ -72,6 +78,26 @@ Template.toDoItemMonthly.rendered = function(){
 				// append the created <ul> to our $_list
 				$_list.append($ul);
 			}
+
+/*
+			// get the just dynamically created list
+			$dynamicList = $('.day-slot-ul');
+
+			// find the monthly To-Dos from the server
+			$serverToDos = $dynamicList.find('.monthly-li');
+
+			// loop through the to dos from the server
+			for(var i=0; i< $serverToDos.length; i++){
+				// find the data attribute from the dynamic list <ul>
+				var day = $serverToDos[i].dataset.day;
+
+				// find the listElement
+				var $listElement = $dynamicList.find("[data-day*='"+day+"']");
+
+				// and append the to-do from the server to this <ul> element
+				$dynamicList[day].appendChild($listElement[i]);
+			}
+*/			
 		};
 
 		// remove all elements from the list
