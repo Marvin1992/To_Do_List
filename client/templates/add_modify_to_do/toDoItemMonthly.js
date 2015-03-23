@@ -64,14 +64,14 @@ Template.toDoItemMonthly.rendered = function(){
 			var $serverToDos;
 
 			// don't create a new list for each to-do
-			if( $('.placeholder').length < calenderLength) {
+			if( $('.monthly_style_slots').length < calenderLength) {
 				// create number of calendar slots matching the calenderLength variable
 				for(var i=1; i<calenderLength+1; i++){
 					// create new <ul> element and append it to the $monthyTimed_ul
 					var $ul = $('<ul>');
 
 					// add class to <ul> element
-					$ul.addClass('day-slot-ul placeholder');
+					$ul.addClass('day-slot-ul monthly_style_slots');
 
 					$ul.text(i); // temp
 
@@ -108,7 +108,6 @@ Template.toDoItemMonthly.rendered = function(){
 		// create the calender with the current month and year as input
 		createCalendar(_month, _year, $monthlyTimed_ul); 
 		
-
 	// even a delay of 0ms helps rendering
 	}, 0);
 }
