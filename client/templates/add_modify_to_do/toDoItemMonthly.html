@@ -2,6 +2,7 @@
 	<li class="monthly-li" data-timeslot="{{time}} {{day_time}}" data-day="{{day}}"
 		data-month="{{month}}" data-year="{{year}}">
 		<h3> {{title}} </h3>
+		<div> {{#if currentUser}} <a href="{{pathFor 'toDosEdit'}}"> Edit To Do </a> {{/if}} </div>
 		<div> <button id="checked"> Is: {{checked}} </button> </div>
 		<!-- following div only temp -->
 		<div> date scheduled: {{day}}/{{month}}/{{year}}</div>

@@ -135,8 +135,10 @@ Template.toDoItem.rendered = function(){
 					newTime = m + " am";
 				} else if(m == 12){
 					newTime = m + " pm";
-				} else if(m > 12){
+				} else if(m > 12 && m != 24){
 					newTime = m-12 + " pm";
+				} else if(m == 24){
+					newTime = m-12 + " am";
 				}
 
 				return newTime;

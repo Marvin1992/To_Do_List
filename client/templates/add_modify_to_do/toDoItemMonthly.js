@@ -63,22 +63,25 @@ Template.toDoItemMonthly.rendered = function(){
 			// server to-dos
 			var $serverToDos;
 
-			// create number of calendar slots matching the calenderLength variable
-			for(var i=1; i<calenderLength+1; i++){
-				// create new <ul> element and append it to the $monthyTimed_ul
-				var $ul = $('<ul>');
+			// don't create a new list for each to-do
+			if( $('.placeholder').length < calenderLength) {
+				// create number of calendar slots matching the calenderLength variable
+				for(var i=1; i<calenderLength+1; i++){
+					// create new <ul> element and append it to the $monthyTimed_ul
+					var $ul = $('<ul>');
 
-				// add class to <ul> element
-				$ul.addClass('day-slot-ul placeholder');
+					// add class to <ul> element
+					$ul.addClass('day-slot-ul placeholder');
 
-				$ul.text(i); // temp
+					$ul.text(i); // temp
 
-				// add a date to the data attribute of the list
-				$ul.data("date-day", i);
-				$ul.data("date-month", month);
+					// add a date to the data attribute of the list
+					$ul.data("date-day", i);
+					$ul.data("date-month", month);
 
-				// append the created <ul> to our $_list
-				$_list.append($ul);
+					// append the created <ul> to our $_list
+					$_list.append($ul);
+				}
 			}
 
 			// get the just dynamically created <ul> list
@@ -102,26 +105,9 @@ Template.toDoItemMonthly.rendered = function(){
 			}
 		};
 
-		// remove all elements from the list
-		var removePlaceholders = function($_list){
-			// get the first node of the day slot list
-			var dynamicList = $('.day-slot-ul');
-
-			// first node of the dynamic list
-			var firstNode = dynamicList[0];
-
-			// loop through the to-dos
-			for(var i=0; i<day.length; i++){
-				firstNode.appendChild($dynamicList[day[i]].children);
-			}
-
-			// remove all placeholders
-			$_list.children('.placeholder').remove();		
-		};
-
-		// remove any additonal rendered placeholders, before rendering a newly list
-		removePlaceholders($monthlyTimed_ul);
+		// create the calender with the current month and year as input
 		createCalendar(_month, _year, $monthlyTimed_ul); 
+		
 
 	// even a delay of 0ms helps rendering
 	}, 0);
