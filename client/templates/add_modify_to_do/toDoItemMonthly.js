@@ -48,6 +48,8 @@ Template.toDoItemMonthly.rendered = function(){
 		var _month = currentDate.getMonth() + 1;
 		var _year = currentDate.getFullYear();
 
+		// empty day array
+		var day = [];
 
 		// function accepting the month, year and the $_list that we append the <ul> elements to 
 		// as parameters
@@ -79,8 +81,7 @@ Template.toDoItemMonthly.rendered = function(){
 				$_list.append($ul);
 			}
 
-/*
-			// get the just dynamically created list
+			// get the just dynamically created <ul> list
 			$dynamicList = $('.day-slot-ul');
 
 			// find the monthly To-Dos from the server
@@ -88,24 +89,37 @@ Template.toDoItemMonthly.rendered = function(){
 
 			// loop through the to dos from the server
 			for(var i=0; i< $serverToDos.length; i++){
-				// find the data attribute from the dynamic list <ul>
-				var day = $serverToDos[i].dataset.day;
+				// find the day via the data attribute from the dynamic list <ul>
+				day[i] = $serverToDos[i].dataset.day;
 
 				// find the listElement
-				var $listElement = $dynamicList.find("[data-day*='"+day+"']");
+				var listElement = $dynamicList[0].children[i];
 
 				// and append the to-do from the server to this <ul> element
-				$dynamicList[day].appendChild($listElement[i]);
+				if(typeof listElement != undefined){
+					$dynamicList[day].appendChild(listElement);
+				} 
 			}
-*/			
 		};
 
 		// remove all elements from the list
 		var removePlaceholders = function($_list){
-			$_list.children('.placeholder').remove();
+			// get the first node of the day slot list
+			var dynamicList = $('.day-slot-ul');
+
+			// first node of the dynamic list
+			var firstNode = dynamicList[0];
+
+			// loop through the to-dos
+			for(var i=0; i<day.length; i++){
+				firstNode.appendChild($dynamicList[day[i]].children);
+			}
+
+			// remove all placeholders
+			$_list.children('.placeholder').remove();		
 		};
 
-		// remove any additonal rendered placeholders, before creating a new list
+		// remove any additonal rendered placeholders, before rendering a newly list
 		removePlaceholders($monthlyTimed_ul);
 		createCalendar(_month, _year, $monthlyTimed_ul); 
 
