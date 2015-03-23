@@ -1,10 +1,11 @@
 <template name="monthlyTimed">
 	<div> {{> timeBased}} </div>
 	<ul class="monthlyTimed-ul" id="monthlyTimed-ul">
-		<ul class="day-slot-ul" data-date-day="{{day}}" data-date-month="{{month}}">
-		{{#each toDoMonthly}}
-			{{> toDoItemMonthly}}
-		{{/each}}
-		</ul>
+        {{#each datesInCurrentMonth}}
+            {{> dateHeader}}
+            {{#each todosForDay}}
+                {{> mattsToDoItemMonthly}}
+            {{/each}}
+        {{/each}}
 	</ul>
 </template>

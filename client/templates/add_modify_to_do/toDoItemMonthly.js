@@ -37,7 +37,7 @@ Template.toDoItemMonthly.events({
 });
 
 // after the toDos have been rendered rearrange and modify them
-Template.toDoItemMonthly.rendered = function(){
+Template.toDoItemMonthly.stupidrendered = function(){
 
 	Meteor.setTimeout(function(){
 		// get a reference to the monthly list
