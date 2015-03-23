@@ -1,7 +1,7 @@
 Template.monthlyTimed.helpers({
 	toDoMonthly: function() {
 		// get the current user
-		var user = Meteor.users.findOne();
+		var user = Meteor.user();
 
 		// get the user's day
 		var currentDate = new Date();
