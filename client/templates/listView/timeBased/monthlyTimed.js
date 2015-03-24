@@ -21,7 +21,8 @@ Template.monthlyTimed.helpers({
 		var _year = currentDate.getFullYear();
 
 		var days = [];
-		for (var i = 1; i <= daysInMonth(_month, _year); i++) {
+		for (var i = 1; i <= daysInMonth(_month+1, _year); i++) {
+			// console.log(new Date(_year, _month, i));
 			days.push(new Date(_year, _month, i));
 		}
 
