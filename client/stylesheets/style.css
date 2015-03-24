@@ -5,3 +5,7 @@
 .weeklyTimed-ul{
 	float: left;
 }
+
+.date-header {
+    list-style-type: none;
+}
