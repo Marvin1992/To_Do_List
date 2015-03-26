@@ -146,10 +146,6 @@ Template.toDoItem.rendered = function(){
 
 			// write data attributes of the list into array
 			for(var i=0; i< $_li.length; i++){
-				/*
-				if(typeof $_li[i].dataset.timeslot === 'undefined'){
-					continue;
-				}*/
 				// first split the data set into two and convert the pm time to the 24:00 system
 				// and then write the assigned value into data values
 				data_values[i] = convertTime(
