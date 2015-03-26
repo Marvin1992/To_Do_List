@@ -1,4 +1,21 @@
 <template name="yearlyTimed">
 	<div> {{> timeBased}} </div>
-	<div> yearly timed </div>
+	<select name="monthlyTimed-select" id="monthlyTimed-select">
+    	<option></option>
+    </select>
+    <select name="yearlyTimed-select" id="yearlyTimed-select">
+    	<option></option>
+    </select>
+    <ul class="yearlyTimed-ul" id="yearlyTimed-ul">
+        {{#each datesInCurrentMonth}}
+            <ul class="date-header">
+    			<!-- because "this" is a native javascript Date object, we're just calling it's getDate function -->
+                {{getDate}}
+              
+	            {{#each todosForDay}}
+	                {{> toDoItemMonthly}}
+	            {{/each}}
+            </ul>
+        {{/each}}
+	</ul>
 </template>
