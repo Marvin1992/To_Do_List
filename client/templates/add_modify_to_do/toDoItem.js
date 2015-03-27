@@ -1,10 +1,3 @@
-Template.toDoItem.helpers({
-	// user owns to do
-	ownToDo: function() {
-		return this.userId === Meteor.userId();
-	}
-});
-
 // binding an event handler to the toDoItem to check it off
 Template.toDoItem.events({
 		'click #checked': function(){
