@@ -49,9 +49,10 @@ Template.toDoItem.rendered = function(){
 		var dailyTimed_li = $('.dailyTimed-li');
 
 		// change the 24 hour display to the US time system
-		// *** TRY FOR EACH LOOP INSTEAD
-		for(var i=0; i<weeklyTimed_li; i++){
-			weeklyTimed_li[i].innerHTML = convertTimeBack(Number(weeklyTimed_li[i].innerHTML));
+		for(var i=0; i<weeklyTimed_li.length; i++){
+			// set the time slot attribute for each weekly item that we pass later with router.go
+			weeklyTimed_li[i].setAttribute('timeslot', Number(weeklyTimed_li[i].innerHTML));
+			//weeklyTimed_li[i].innerHTML = convertTimeBack(Number(weeklyTimed_li[i].innerHTML));
 		}
 
 

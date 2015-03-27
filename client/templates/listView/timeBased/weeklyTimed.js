@@ -53,10 +53,10 @@ Template.weeklyTimed.events({
 		// jQuery target
 		var target = $(event.target);
 
-		// check if the selected target is a dailyelement
-		if(target.hasClass('daily-li')){
+		// check if the selected target contains weeklyTimed-li
+		if(target.hasClass('weeklyTimed-li')){
 			// pass onlick the selected time and list to the addToDo template
-			Router.go('addToDo', {foo: 'bar'}, {hash: target.data("timeslot"), query: target.parent()[0].id } );
+			Router.go('addToDo', {foo: 'bar'}, {hash: target.attr("timeslot"), query: target.parent()[0].id } );
 		}
 	}
 });
