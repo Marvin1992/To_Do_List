@@ -17,9 +17,9 @@ Template.toDoItem.events({
 
 		// toggle between checked states
 		if(this.checked === "is-checked"){
-			var checkedStatus = "not-checked";
+			checkedStatus = "not-checked";
 		} else if (this.checked === "not-checked"){
-			var checkedStatus = "is-checked";
+			checkedStatus = "is-checked";
 		}
 
 		// create an to_do object
@@ -32,14 +32,32 @@ Template.toDoItem.events({
 			if(error) {
 				// display the error to the user
 				alert(error.reason);
-			} else {
-				// reload page
-				// Router.go('dailyTimed', {_id: currentToDoId});
 			}
 		});
 
 	}
 });
+
+
+// Template rendered callback
+Template.toDoItem.rendered = function(){
+	// is executed after DOM has rendered
+	Meteor.setTimeout(function(){
+
+		// get a reference to our list elements
+		var weeklyTimed_li = $('.weeklyTimed-li');
+		var dailyTimed_li = $('.dailyTimed-li');
+
+		// change the 24 hour display to the US time system
+		// *** TRY FOR EACH LOOP INSTEAD
+		for(var i=0; i<weeklyTimed_li; i++){
+			weeklyTimed_li[i].innerHTML = convertTimeBack(Number(weeklyTimed_li[i].innerHTML));
+		}
+
+
+	// even a delay of 0ms helps rendering the list
+	}, 0);
+}
 
 /*
 // if the list has been rendered

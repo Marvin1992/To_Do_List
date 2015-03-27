@@ -4,50 +4,99 @@
 	<!-- Three Days Ago-->
 		<ul class="weeklyTimed-ul" id="threeDaysAgo-timed-ul">
 			<div> Three Days Ago </div>
-			{{#each threeDaysAgo}}
-				{{> toDoItem}}
+			{{#each hours}}
+				<li class="date-header weeklyTimed-li">
+					{{getHours}}
+				</li>
+
+				{{#each threeDaysAgo}}
+					{{> toDoItem}}
+				{{/each}}
+
 			{{/each}}
 		</ul>
 	<!-- Two Days Ago-->
 		<ul class="weeklyTimed-ul" id="twoDaysAgo-timed-ul">
 			<div> Two Days Ago </div>
-			{{#each twoDaysAgo}}
-				{{> toDoItem}}
+			{{#each hours}}
+				<li class="date-header weeklyTimed-li">
+					{{getHours}}
+				</li>
+
+				{{#each twoDaysAgo}}
+					{{> toDoItem}}
+				{{/each}}
+
 			{{/each}}
 		</ul>
 	<!-- Yesterday-->
 		<ul class="weeklyTimed-ul" id="yesterday-timed-ul">
 			<div> Yesterday </div>
-			{{#each yesterday}}
-				{{> toDoItem}}
+			{{#each hours}}
+				<li class="date-header weeklyTimed-li">
+					{{getHours}}
+				</li>
+
+				{{#each yesterday}}
+					{{> toDoItem}}
+				{{/each}}
+
 			{{/each}}
 		</ul>
 	<!-- Today-->
 		<ul class="weeklyTimed-ul" id="toDoToday-timed-ul">
 			<div> Today </div>
-			{{#each toDoToday}}
-				{{> toDoItem}}
+			{{#each hours}}
+				<li class="date-header weeklyTimed-li">
+					{{getHours}}
+				</li>
+
+				{{#each toDoToday}}
+					{{> toDoItem}}
+				{{/each}}
+
 			{{/each}}
 		</ul>
 	<!-- Tomorrow-->
 		<ul class="weeklyTimed-ul" id="tomorrow-timed-ul">
 			<div> Tomorrow </div>
-			{{#each tomorrow}}
-				{{> toDoItem}}
+			{{#each hours}}
+				<li class="date-header weeklyTimed-li">
+					{{getHours}}
+				</li>
+
+				{{#each tomorrow}}
+					{{> toDoItem}}
+				{{/each}}
+
 			{{/each}}
 		</ul>
 	<!-- In Two Days-->
 		<ul class="weeklyTimed-ul" id="inTwoDays-timed-ul">
 			<div> In Two Days </div>
-			{{#each inTwoDays}}
-				{{> toDoItem}}
+			{{#each hours}}
+				<li class="date-header weeklyTimed-li">
+					{{getHours}}
+				</li>
+
+				{{#each inTwoDays}}
+					{{> toDoItem}}
+				{{/each}}
+
 			{{/each}}
 		</ul>
 	<!-- In Three Days-->
 		<ul class="weeklyTimed-ul" id="inThreeDays-timed-ul">
 			<div> In Three Days </div>
-			{{#each inThreeDays}}
-				{{> toDoItem}}
+			{{#each hours}}
+				<li class="date-header weeklyTimed-li">
+					{{getHours}}
+				</li>
+
+				{{#each inThreeDays}}
+					{{> toDoItem}}
+				{{/each}}
+
 			{{/each}}
 		</ul>
 	</section>

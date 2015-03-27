@@ -1,19 +1,8 @@
-<!--
-<template name="dailyTimed">
-	<div> {{> timeBased}} </div>
-	<ul class="dailyTimed-ul">
-		{{#each toDoToday}}
-			{{> toDoItem}}
-		{{/each}}
-	</ul>
-</template>
--->
-
 <template name="dailyTimed">
 	<div> {{> timeBased}} </div>
 	<ul class="dailyTimed-ul">
 	{{#each hours}}
-		<li class="date-header">
+		<li class="date-header dailyTimed-li">
 			{{getHours}}
 		</li>
 
