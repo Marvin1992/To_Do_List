@@ -95,11 +95,7 @@ Template.toDosEdit.rendered = function(){
 		var _day = currentDate.getDate();
 		var _month = currentDate.getMonth() + 1;
 		var _year = currentDate.getFullYear();
-
-		// function to get the days in a month
-		function daysInMonth(month, year) {
-		    return new Date(year, month, 0).getDate();
-		}		
+		
 
 		// get the total days in the current month
 		var totalDays = daysInMonth(_month, _year);

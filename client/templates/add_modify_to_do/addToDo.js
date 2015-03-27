@@ -15,22 +15,6 @@ var getData = function(){
     };
 }
 
-// function to convert back from military time to US time
-var convertTimeBack = function(militaryTime){
-	var m = militaryTime;
-	var newTime;
-
-	if(m < 12){
-		newTime = m + " am";
-	} else if(m == 12){
-		newTime = m + " pm";
-	} else if(m > 12){
-		newTime = m-12 + " pm";
-	}
-
-	return newTime;
-}
-
 
 // binding an event handler to the submit form in addToDo.html template
 Template.addToDo.events({
@@ -110,12 +94,7 @@ Template.addToDo.created = function(){
 		var currentDate = new Date();
 		var _day = currentDate.getDate();
 		var _month = currentDate.getMonth() + 1;
-		var _year = currentDate.getFullYear();
-
-		// function to get the days in a month
-		function daysInMonth(month, year) {
-		    return new Date(year, month, 0).getDate();
-		}		
+		var _year = currentDate.getFullYear();	
 
 		// get the total days in the current month
 		var totalDays = daysInMonth(_month, _year);
@@ -190,20 +169,33 @@ Template.addToDo.rendered = function(){
 			var dataName = data.name.split("-")[0];
 
 			// convert our string into a time reference
+			// function that returns corrects week date (32/3/2015 becomes 1/4/2015)
 			if(dataName == "threeDaysAgo") { 
-				inputDay = _day-3;
+				inputDay = correctDay(_day, _month, _year, -3).day;
+				_month = correctDay(_day, _month, _year, -3).month;
+				_year = correctDay(_day, _month, _year, -3).year;
 			} else if(dataName == "twoDaysAgo"){
-				inputDay = _day-2;
+				inputDay = correctDay(_day, _month, _year, -2).day;
+				_month = correctDay(_day, _month, _year, -2).month;
+				_year = correctDay(_day, _month, _year, -2).year;
 			} else if(dataName == "yesterday"){
-				inputDay = _day-1;
+				inputDay = correctDay(_day, _month, _year, -1).day;
+				_month = correctDay(_day, _month, _year, -1).month;
+				_year = correctDay(_day, _month, _year, -1).year;
 			} else if(dataName == "toDoToday"){
 				inputDay = _day;
 			} else if(dataName == "tomorrow"){
-				inputDay = _day+1;
+				inputDay = correctDay(_day, _month, _year, 1).day;
+				_month = correctDay(_day, _month, _year, 1).month;
+				_year = correctDay(_day, _month, _year, 1).year;
 			} else if(dataName == "inTwoDays"){
-				inputDay = _day+2;
+				inputDay = correctDay(_day, _month, _year, 2).day;
+				_month = correctDay(_day, _month, _year, 2).month;
+				_year = correctDay(_day, _month, _year, 2).year;
 			} else if(dataName == "inThreeDays"){
-				inputDay = _day+3;
+				inputDay = correctDay(_day, _month, _year, 3).day;
+				_month = correctDay(_day, _month, _year, 3).month;
+				_year = correctDay(_day, _month, _year, 3).year;
 			}
 
 			// convert our numbers to string in order to insert them
@@ -216,6 +208,7 @@ Template.addToDo.rendered = function(){
 			$('#month-select').val(s_month);
 			$('#year-select').val(s_year);
 
+			// time clicked on
 			$('#time-select').val(time);
 			$('#dayTime-select').val(dayTime);
 		}

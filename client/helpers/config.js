@@ -30,7 +30,7 @@ convertTime = function(number, meriediem){
 	} else if(n < 12 && m === "pm"){
 		newTime = n + 12;
 	} else if(n === 12 && m === "am"){
-		newTime = n + 12;
+		newTime = 0;
 	} else {
 		newTime = undefined;
 	}
@@ -44,14 +44,14 @@ convertTimeBack = function(militaryTime){
 	var m = militaryTime;
 	var newTime;
 
-	if(m < 12){
+	if(m < 12 && m != 0){
 		newTime = m + " am";
 	} else if(m == 12){
 		newTime = m + " pm";
 	} else if(m > 12 && m != 24){
 		newTime = m-12 + " pm";
-	} else if(m == 24){
-		newTime = m-12 + " am";
+	} else if(m == 0){
+		newTime = 12 + " am";
 	}
 
 	return newTime;
