@@ -37,3 +37,21 @@ convertTime = function(number, meriediem){
 	// return new time
 	return newTime;
 };
+
+// function to convert back from military time to US time
+convertTimeBack = function(militaryTime){
+	var m = militaryTime;
+	var newTime;
+
+	if(m < 12){
+		newTime = m + " am";
+	} else if(m == 12){
+		newTime = m + " pm";
+	} else if(m > 12 && m != 24){
+		newTime = m-12 + " pm";
+	} else if(m == 24){
+		newTime = m-12 + " am";
+	}
+
+	return newTime;
+};
