@@ -41,7 +41,7 @@ Template.toDoItem.events({
 	}
 });
 
-
+/*
 // if the list has been rendered
 // Template rendered callback
 Template.toDoItem.rendered = function(){
@@ -224,3 +224,4 @@ Template.toDoItem.rendered = function(){
 	// even a delay of 0ms helps rendering the list
 	}, 0);
 }
+// */

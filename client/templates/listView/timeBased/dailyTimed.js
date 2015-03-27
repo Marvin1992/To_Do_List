@@ -14,6 +14,7 @@ Template.dailyTimed.helpers({
 
 		return hours;
 	},
+	/*
 	toDoToday: function() {
 		// get the user's day
 		var currentDate = new Date();
@@ -31,15 +32,15 @@ Template.dailyTimed.helpers({
 			year: _year
 		});
 	}
-	/*
+	*/
 	toDoToday: function() {
 		return To_Dos.find({
 			author: Meteor.user().username, 
-			hour: this.getHours(),
+			mTime: this.getHours(),
 			month: this.getMonth() + 1, 
 			year: this.getFullYear(),
 			day: this.getDate()  
 		});
 	}
-	*/
+
 });

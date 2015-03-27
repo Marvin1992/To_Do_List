@@ -67,12 +67,18 @@ Template.addToDo.events({
 			_selectedYear = $(e.target).find('[name=year-select]').val();
 		}
 
+		var _militaryTime = convertTime(
+			$(e.target).find('[name=time-select]').val(),
+			$(e.target).find('[name=dayTime-select]').val()
+		);
+
 		// create an to_do object
 		var to_do = {
 			title: $(e.target).find('[name=title]').val(),
 			description: $(e.target).find('[name=description]').val(),
 			time: $(e.target).find('[name=time-select]').val(),
 			day_time: $(e.target).find('[name=dayTime-select]').val(),
+			mTime: _militaryTime,
 			day: Number(_selectedDay),
 			month: Number(_selectedMonth),
 			year: Number(_selectedYear),
