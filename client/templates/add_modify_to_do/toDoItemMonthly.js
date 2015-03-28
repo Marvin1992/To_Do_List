@@ -1,8 +1,3 @@
-// function to get the days in a month
-function daysInMonth(month, year) {
-    return new Date(year, month, 0).getDate();
-}
-
 // binding an event handler to the toDoItemMonthly to check it off
 Template.toDoItemMonthly.events({
 	'click #checked': function(){
