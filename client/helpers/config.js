@@ -120,3 +120,20 @@ correctDay = function(_day, _month, _year, _count){
 	// return day and month as an object
 	return newDate;
 };
+
+// function that changes the military time display and adds an attribute to our lists
+changeTimeDisplay = function($_list){
+	// set the timeslot for the router.go
+	for(var i=0; i< $_list.length; i++){
+		// set the time slot attribute for each weekly item that we pass later with router.go
+		$_list[i].setAttribute('timeslot', Number($_list[i].innerHTML.split(":")[0]));
+	}	
+
+	// add the american pm system to the military time
+	for(var i=0; i< $_list.length; i++){
+		// change the appearance of the 24 system and add US time
+		if(typeof convertTimeBack(Number($_list[i].innerHTML)) != 'undefined'){
+			$_list[i].innerHTML = Number($_list[i].innerHTML)+":00" + " " + convertTimeBack(Number($_list[i].innerHTML));
+		}
+	}
+};

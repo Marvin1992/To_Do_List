@@ -46,6 +46,20 @@ Template.weeklyTimed.helpers({
 	inThreeDays: daysMaker(3)	
 });
 
+// Template rendered callback
+Template.weeklyTimed.rendered = function(){
+	// is executed after DOM has rendered
+	Meteor.setTimeout(function(){
+
+		// get a reference to our list elements
+		var weeklyTimed_li = $('.weeklyTimed-li');
+
+		// change the weekly view
+		changeTimeDisplay(weeklyTimed_li);
+
+	// even a delay of 0ms helps rendering the list
+	}, 0);
+}
 
 Template.weeklyTimed.events({
 	'click #weeklyTimed-section': function(event){

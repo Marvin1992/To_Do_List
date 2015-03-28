@@ -24,13 +24,16 @@ Template.addToDo.events({
 
 		// get the user's day
 		var currentDate = new Date();
+		var _hour = currentDate.getHours();
 		var _day = currentDate.getDate();
 		var _month = currentDate.getMonth() + 1;
 		var _year = currentDate.getFullYear();
 
+		var _selectedHour;
 		var _selectedDay;
 		var _selectedMonth; 
 		var _selectedYear;
+
 
 		// assign today's value to the to-do if the user didn't put a date
 		if($(e.target).find('[name=day-select]').val() === ''){
@@ -51,10 +54,15 @@ Template.addToDo.events({
 			_selectedYear = $(e.target).find('[name=year-select]').val();
 		}
 
-		var _militaryTime = convertTime(
-			$(e.target).find('[name=time-select]').val(),
-			$(e.target).find('[name=dayTime-select]').val()
-		);
+		if($(e.target).find('[name=time-select]').val() === '' || 
+		   $(e.target).find('[name=dayTime-select]').val() === ''){
+			_selectedHour = _hour;
+		} else {
+			_selectedHour = convertTime(
+				$(e.target).find('[name=time-select]').val(),
+				$(e.target).find('[name=dayTime-select]').val()
+			);
+		}
 
 		// create an to_do object
 		var to_do = {
@@ -62,7 +70,7 @@ Template.addToDo.events({
 			description: $(e.target).find('[name=description]').val(),
 			time: $(e.target).find('[name=time-select]').val(),
 			day_time: $(e.target).find('[name=dayTime-select]').val(),
-			mTime: _militaryTime,
+			mTime: Number(_selectedHour),
 			day: Number(_selectedDay),
 			month: Number(_selectedMonth),
 			year: Number(_selectedYear),
@@ -196,9 +204,11 @@ Template.addToDo.rendered = function(){
 				inputDay = correctDay(_day, _month, _year, 3).day;
 				_month = correctDay(_day, _month, _year, 3).month;
 				_year = correctDay(_day, _month, _year, 3).year;
+			} else if(dataName == "dailyTimed"){
+				inputDay = _day;
 			}
 
-			// convert our numbers to string in order to insert them
+			// convert our numbers to strings in order to insert them
 			var sInputDay = inputDay.toString();
 			var s_month = _month.toString();
 			var s_year = _year.toString();

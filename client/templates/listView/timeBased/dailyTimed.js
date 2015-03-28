@@ -24,3 +24,31 @@ Template.dailyTimed.helpers({
 		});
 	}
 });
+
+Template.dailyTimed.rendered = function(){
+	// is executed after DOM has rendered
+	Meteor.setTimeout(function(){
+
+		// get a reference to our list elements
+		var dailyTimed_li = $('.dailyTimed-li');
+
+		// change the daily view
+		changeTimeDisplay(dailyTimed_li);
+
+	// even a delay of 0ms helps rendering the list
+	}, 0);
+}
+
+Template.dailyTimed.events({
+	'click #dailyTimed-ul': function(event){
+
+		// jQuery target
+		var target = $(event.target);
+
+		// check if the selected target contains weeklyTimed-li
+		if(target.hasClass('dailyTimed-li')){
+			// pass onlick the selected time and list to the addToDo template
+			Router.go('addToDo', {foo: 'bar'}, {hash: target.attr("timeslot"), query: target.parent()[0].id } );
+		}
+	}
+});
