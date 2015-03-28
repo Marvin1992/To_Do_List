@@ -41,15 +41,19 @@ Template.toDoItem.rendered = function(){
 		var weeklyTimed_li = $('.weeklyTimed-li');
 		var dailyTimed_li = $('.dailyTimed-li');
 
-		// change the 24 hour display to the US time system
+		// set the timeslot for the router.go
 		for(var i=0; i<weeklyTimed_li.length; i++){
 			// set the time slot attribute for each weekly item that we pass later with router.go
-			weeklyTimed_li[i].setAttribute('timeslot', Number(weeklyTimed_li[i].innerHTML));
+			weeklyTimed_li[i].setAttribute('timeslot', Number(weeklyTimed_li[i].innerHTML.split(":")[0]));
+		}	
 
-			// change the appearance of the 24 to US time
-			//weeklyTimed_li[i].innerHTML = convertTimeBack(Number(weeklyTimed_li[i].innerHTML));
+		// add the american pm system to the military time
+		for(var i=0; i<weeklyTimed_li.length; i++){
+			// change the appearance of the 24 system and add US time
+			if(typeof convertTimeBack(Number(weeklyTimed_li[i].innerHTML)) != 'undefined'){
+				weeklyTimed_li[i].innerHTML = Number(weeklyTimed_li[i].innerHTML)+":00" + " " + convertTimeBack(Number(weeklyTimed_li[i].innerHTML));
+			}
 		}
-
 
 	// even a delay of 0ms helps rendering the list
 	}, 0);
