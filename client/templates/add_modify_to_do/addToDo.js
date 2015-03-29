@@ -168,8 +168,12 @@ Template.addToDo.rendered = function(){
 
 			// prepare the time from the parameter of router.go for the selection
 			var newTime = convertTimeBack(data.time); 
-			var time = newTime.split(" ")[0];
-			var dayTime = newTime.split(" ")[1];
+
+			// newTime is undefined for the yearly selection
+			if(typeof newTime != 'undefined'){
+				var time = newTime.split(" ")[0];
+				var dayTime = newTime.split(" ")[1];
+			}
 
 			// declare an empty variable
 			var inputDay;
@@ -217,7 +221,10 @@ Template.addToDo.rendered = function(){
 				dayTime = convertTimeBack(_hour).split(" ")[1];
 	// YearlyTimed				
 			} else if(dataName == "yearlyTimed"){
-				inputDay = data.time;
+				inputDay = data.time.split("_")[0];
+				_month = data.time.split("_")[1];
+				_year = data.time.split("_")[2];
+
 				// fill the fields with the current time
 				time = convertTimeBack(_hour).split(" ")[0];
 				dayTime = convertTimeBack(_hour).split(" ")[1];

@@ -45,8 +45,11 @@ Template.yearlyTimed.events({
 			} else {
 				// if there are no to-dos redirect the user to create a to-do
 				Router.go('addToDo', {foo: 'bar'}, 
-					// we also need to pass the year and month *****
-					{hash: Number(target.text()), query: target.parent()[0].id } );		
+					// pass the day, the month, the year and what list we are coming from
+					{hash: Number(target.text()) + "_" +
+						$('#monthlyTimed-select').val() + "_" +
+						$('#yearlyTimed-select').val(), 
+					query: target.parent()[0].id } );		
 			}
 		}
 	}

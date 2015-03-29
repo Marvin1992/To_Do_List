@@ -52,6 +52,8 @@ convertTimeBack = function(militaryTime){
 		newTime = m-12 + " pm";
 	} else if(m == 0){
 		newTime = 12 + " am";
+	} else {
+		return undefined;
 	}
 
 	return newTime;
