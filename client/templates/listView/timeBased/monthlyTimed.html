@@ -2,8 +2,7 @@
 	<div> {{> timeBased}} </div>
 	<ul class="monthlyTimed-ul" id="monthlyTimed-ul">
         {{#each datesInCurrentMonth}}
-            <ul class="date-header">
-    			<!-- because "this" is a native javascript Date object, we're just calling it's getDate function -->
+            <ul class="date-header monthlyTimed-ul-ul">
                 {{getDate}}
               
 	            {{#each todosForDay}}

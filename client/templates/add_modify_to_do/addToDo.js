@@ -161,6 +161,7 @@ Template.addToDo.rendered = function(){
 
 			// get the user's day
 			var currentDate = new Date();
+			var _hour = currentDate.getHours();
 			var _day = currentDate.getDate();
 			var _month = currentDate.getMonth() + 1;
 			var _year = currentDate.getFullYear();
@@ -176,8 +177,9 @@ Template.addToDo.rendered = function(){
 			// get the first word from the string
 			var dataName = data.name.split("-")[0];
 
-			// convert our string into a time reference
+			// convert our string from the router.go into a time reference
 			// function that returns corrects week date (32/3/2015 becomes 1/4/2015)
+	// WeeklyTimed
 			if(dataName == "threeDaysAgo") { 
 				inputDay = correctDay(_day, _month, _year, -3).day;
 				_month = correctDay(_day, _month, _year, -3).month;
@@ -204,8 +206,15 @@ Template.addToDo.rendered = function(){
 				inputDay = correctDay(_day, _month, _year, 3).day;
 				_month = correctDay(_day, _month, _year, 3).month;
 				_year = correctDay(_day, _month, _year, 3).year;
+	// DailyTimed
 			} else if(dataName == "dailyTimed"){
 				inputDay = _day;
+	// MonthlyTimed
+			} else if(dataName == "monthlyTimed"){
+				inputDay = data.time;
+				// fill the fields with the current time
+				time = convertTimeBack(_hour).split(" ")[0];
+				dayTime = convertTimeBack(_hour).split(" ")[1];
 			}
 
 			// convert our numbers to strings in order to insert them

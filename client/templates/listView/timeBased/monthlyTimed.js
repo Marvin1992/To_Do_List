@@ -24,3 +24,25 @@ Template.monthlyTimed.helpers({
 		});
 	}
 });
+
+
+Template.monthlyTimed.events({
+	'click #monthlyTimed-ul': function(event){
+
+		// jQuery target
+		var target = $(event.target);
+
+		// check if the selected target contains weeklyTimed-li
+		if(target.hasClass('monthlyTimed-ul-ul')){
+			// if there are to-dos
+			if(target.children().length != 0){
+				// show our to-dos
+				target.children().slideToggle("slow");
+			} else {
+				// if there are no to-dos redirect the user to create a to-do
+				Router.go('addToDo', {foo: 'bar'}, 
+					{hash: Number(target.text()), query: target.parent()[0].id } );		
+			}
+		}
+	}
+});
