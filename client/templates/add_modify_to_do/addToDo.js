@@ -215,7 +215,14 @@ Template.addToDo.rendered = function(){
 				// fill the fields with the current time
 				time = convertTimeBack(_hour).split(" ")[0];
 				dayTime = convertTimeBack(_hour).split(" ")[1];
+	// YearlyTimed				
+			} else if(dataName == "yearlyTimed"){
+				inputDay = data.time;
+				// fill the fields with the current time
+				time = convertTimeBack(_hour).split(" ")[0];
+				dayTime = convertTimeBack(_hour).split(" ")[1];
 			}
+
 
 			// convert our numbers to strings in order to insert them
 			var sInputDay = inputDay.toString();

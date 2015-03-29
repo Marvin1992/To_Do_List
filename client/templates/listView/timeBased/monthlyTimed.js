@@ -32,7 +32,7 @@ Template.monthlyTimed.events({
 		// jQuery target
 		var target = $(event.target);
 
-		// check if the selected target contains weeklyTimed-li
+		// check if the selected target contains monthlyTimed-li
 		if(target.hasClass('monthlyTimed-ul-ul')){
 			// if there are to-dos
 			if(target.children().length != 0){

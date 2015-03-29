@@ -30,6 +30,25 @@ Template.yearlyTimed.events({
 
 		// notifying everyone that is dependent on _deps that it has changes
 		selection_deps.changed();
+	},
+	'click #yearlyTimed-ul': function(event){
+
+		// jQuery target
+		var target = $(event.target);
+
+		// check if the selected target contains yearlyTimed-li
+		if(target.hasClass('yearlyTimed-ul-ul')){
+			// if there are to-dos
+			if(target.children().length != 0){
+				// show our to-dos
+				target.children().slideToggle("slow");
+			} else {
+				// if there are no to-dos redirect the user to create a to-do
+				Router.go('addToDo', {foo: 'bar'}, 
+					// we also need to pass the year and month *****
+					{hash: Number(target.text()), query: target.parent()[0].id } );		
+			}
+		}
 	}
 });
 
