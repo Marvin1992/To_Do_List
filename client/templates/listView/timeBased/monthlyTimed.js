@@ -46,3 +46,12 @@ Template.monthlyTimed.events({
 		}
 	}
 });
+
+Template.monthlyTimed.rendered = function(){
+	$(".monthlyTimed-ul-ul").each(function() {
+		// if the monthly timed has a to-do add a class that can be styled
+		if($(this).children().length != 0){
+			$(this).addClass("has-to-do");
+		}
+	});	
+}
