@@ -34,6 +34,7 @@ Template.addToDo.events({
 		var _selectedMonth; 
 		var _selectedYear;
 
+		var itemName;
 
 		// assign today's value to the to-do if the user didn't put a date
 		if($(e.target).find('[name=day-select]').val() === ''){
@@ -64,9 +65,16 @@ Template.addToDo.events({
 			);
 		}
 
+		// add a generic title if the user doesn't put a title
+		if($(e.target).find('[name=title]').val() === ''){
+			itemName = "New Item";
+		} else {
+			itemName = $(e.target).find('[name=title]').val();
+		}
+
 		// create an to_do object
 		var to_do = {
-			title: $(e.target).find('[name=title]').val(),
+			title: itemName,
 			description: $(e.target).find('[name=description]').val(),
 			time: $(e.target).find('[name=time-select]').val(),
 			day_time: $(e.target).find('[name=dayTime-select]').val(),

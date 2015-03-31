@@ -1,6 +1,6 @@
 // binding an event handler to the toDoItem to check it off
 Template.toDoItem.events({
-		'click #checked': function(){
+	'click #checked': function(){
 
 		// get the current to do id
 		var currentToDoId = this._id;
@@ -28,5 +28,12 @@ Template.toDoItem.events({
 			}
 		});
 
+	},
+	'click #item-title': function(event){
+		// jQuery target
+		var target = $(event.target);
+
+		// slide the div item open
+		target.siblings().slideToggle("slow");
 	}
 });

@@ -1,13 +1,15 @@
 <template name="toDoItem">
-	<li class="date-header" data-mTime="{{mTime}}" data-timeslot="{{time}} {{day_time}}" data-date="{{day}} {{month}} {{year}}">
-		<h3> {{title}} </h3>
-		<p> Description: {{description}} </p>
-		<h5> Set time: {{time}} {{day_time}} </h5>
-		<div> {{#if currentUser}} <a href="{{pathFor 'toDosEdit'}}"> Edit To Do </a> {{/if}} </div>
-		<!-- {{checked}} only a current placeholder for the changing image later -->
-		<div> <button id="checked"> Is: {{checked}} </button> </div>
+	<li class="date-header daily-item" data-mTime="{{mTime}}" data-timeslot="{{time}} {{day_time}}" data-date="{{day}} {{month}} {{year}}">
+		<h4 id="item-title"><img class="list-title" src="/img/list.png"> {{title}} </h4>
+		<div id="item-opener" style="display: none;">
+			<p> Description: {{description}} </p>
+			<h5> Set time: {{time}} {{day_time}} </h5>
+			<div> {{#if currentUser}} <a href="{{pathFor 'toDosEdit'}}"> Edit To Do </a> {{/if}} </div>
+			<!-- {{checked}} only a current placeholder for the changing image later -->
+			<div> <button id="checked"> Is: {{checked}} </button> </div>
 
-		<!-- following div only temp -->
-		<div> date scheduled: {{day}}/{{month}}/{{year}}</div>
+			<!-- following div only temp -->
+			<div> date scheduled: {{day}}/{{month}}/{{year}}</div>
+		</div>
 	</li>
 </template>
