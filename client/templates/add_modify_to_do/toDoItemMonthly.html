@@ -1,10 +1,13 @@
 <template name="toDoItemMonthly">
 	<li class="monthly-li" data-timeslot="{{time}} {{day_time}}" data-day="{{day}}"
 		data-month="{{month}}" data-year="{{year}}" style="display: none;">
-		<h3> {{title}} </h3>
-		<div> {{#if currentUser}} <a href="{{pathFor 'toDosEdit'}}"> Edit To Do </a> {{/if}} </div>
-		<div> <button id="checked"> Is: {{checked}} </button> </div>
-		<!-- following div only temp -->
-		<div> date scheduled: {{day}}/{{month}}/{{year}}</div>
+		<h4 id="item-title"><img class="list-title" src="/img/list.png"> {{title}} 
+			<a href="{{pathFor 'toDosEdit'}}"> <img class="edit-title" src="/img/edit.png"> </a></h4>
+		<div id="item-opener">
+			<p class="item-paragraph"><b> Description:</b> {{description}} </p>
+			<p class="item-paragraph"><b> Set time:</b> {{time}} {{day_time}} </p>
+			<p class="item-paragraph"><b> date scheduled:</b> {{day}}/{{month}}/{{year}}</p>
+			<div><button id="checked" class="{{checked}} check-button-style"><img class="check-button-img" src="/img/checked.png"></button></div>
+		</div>
 	</li>
 </template>
