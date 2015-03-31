@@ -1,25 +1,43 @@
-.weeklyTimed-section{
-
-}
-
-.weeklyTimed-ul{
-	float: left;
-}
-
-.date-header {
-    list-style-type: none;
-}
-
+/* HEADER SECTION */
+/* HEADER SECTION */
 .main-header{
-	display: inline;
+	margin-top: 10px;
+	background: #323232;
+	box-shadow: 0px 3px 5px #888, 0px -3px 5px #888;
 }
+
+.navigation-bar{
+	display: inline-block;
+}
+
+/* home button */
+.home-button{
+	float: left;
+	width: 100px;
+	height: 100px;}
+	.home-button:hover { background: #666;}
+
+.icon{
+	position: relative;
+	left: 12.5px;
+	top: 12.5px;
+}
+
+/* plus button */
+.plus-button{
+	float: left;
+	width: 100px;
+	height: 100px;}
+	.plus-button:hover { background: #666;}
 
 /* Switch dropdown menu */
 .ul-switch{
+	float: left;
+	position: absolute;
+	right: 5%;
   text-align: left;
   display: inline;
   margin: 0;
-  padding: 15px 4px 17px 0;
   list-style: none;
 }
 .ul-switch li {
@@ -28,7 +46,6 @@
   margin-right: -4px;
   position: relative;
   padding: 15px 20px;
-  background: #fff;
   cursor: pointer;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -70,3 +87,40 @@
   opacity: 1;
   visibility: visible;
 }
+
+
+/* MAIN SECTION */
+/* MAIN SECTION */
+.main-section{
+	margin-top: 20px;
+}
+
+.weeklyTimed-section{
+
+}
+
+.weeklyTimed-ul{
+	float: left;
+}
+
+.date-header {
+    list-style-type: none;
+}
+
+.display-buttons{
+	margin-left: 15px;
+	background-color: #383636;
+	border-color: grey;
+	color: white;
+	border-radius: 17%;
+	width: 135px;
+	height: 50px;
+	font-size: x-large;
+	border-width: 6px;
+	box-shadow: 2px 2px 2px #000;}
+	.display-buttons:hover{
+		background-color: #666;
+		border-color: rgb(234, 234, 234);
+		color: rgb(142, 143, 186);
+		box-shadow: 2px 2px 2px rgb(142, 143, 186);	
+	}

@@ -2,8 +2,9 @@
 	{{#if currentUser}} 
 	<header role="navigation" class="main-header">
 		<div class="navigation-bar">
-			<a href="{{pathFor 'emptyTemplate'}}"><img src="/img/home.png"></a>
-			<a href="{{pathFor 'addToDo'}}"><img src="/img/plus.png"></a>
+			<div class="home-button"> <a href="{{pathFor 'emptyTemplate'}}"><img class="icon" src="/img/home.png"></a> </div>
+			<div class="plus-button"> <a href="{{pathFor 'addToDo'}}"><img class="icon" src="/img/plus.png"></a>
+			</div>
 			<ul class="ul-switch">
 				<li> <img src="/img/switch.png">
 					<ul>
@@ -14,7 +15,7 @@
 			</ul>
 		</div>
 	</header>
-	<div id="main">
+	<div id="main" class="main-section">
 		<!-- {{> yield}} helper defines a special dynamic zone that will automatically render whichever template corresponds to the current route -->
 		{{> yield}}
 	</div>
