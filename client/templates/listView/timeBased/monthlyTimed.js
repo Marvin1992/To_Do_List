@@ -52,16 +52,6 @@ Template.monthlyTimed.events({
 					{hash: Number(target.text()), query: target.parent()[0].id } );		
 			}
 		}
-	},
-	'change .monthlyTimed-ul-ul': function(){
-		$(".monthlyTimed-ul-ul").each(function() {
-			// if the list is open
-			if($(this).is(':visible')){
-				$(this).addClass('ul-ul-open');
-			} else {
-				$(this).removeClass('ul-ul-open');
-			}
-		});
 	}
 });
 

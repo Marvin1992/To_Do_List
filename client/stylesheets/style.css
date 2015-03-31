@@ -30,7 +30,7 @@
 	height: 100px;}
 	.plus-button:hover { background: #666;}
 
-/* Switch dropdown menu */
+/* switch dropdown menu */
 .ul-switch{
 	float: left;
 	position: absolute;
@@ -92,12 +92,15 @@
 }
 
 
+
+
 /* MAIN SECTION */
 /* MAIN SECTION */
 .main-section{
 	margin-top: 20px;
 }
 
+/* 	================================  daily section ============================= */
 .daily-item{
 	cursor: help;
 	text-align: left;
@@ -165,6 +168,7 @@
 		color: #BABABA;
 	}
 
+/* 	================================  weekly section ============================= */
 .weeklyTimed-section{
 
 }
@@ -201,7 +205,7 @@
 		color: #BABABA;
 	}
 
-
+/* 	================================  monthly section ============================= */
 .monthlyTimed-ul-ul{
 	margin-left: 1.0%;
 	width: 70%;
