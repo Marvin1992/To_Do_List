@@ -1,24 +1,22 @@
 <template name="layout">
-	<header role="navigation">
-		{{#if currentUser}} <a href="{{pathFor 'emptyTemplate'}}"> Home </a> {{/if}}
-		<div> {{#if currentUser}} <a href="{{pathFor 'addToDo'}}"> + To Do </a> {{/if}} </div>
+	{{#if currentUser}} 
+	<header role="navigation" class="main-header">
+		<div class="navigation-bar">
+			<a href="{{pathFor 'emptyTemplate'}}"><img src="/img/home.png"></a>
+			<a href="{{pathFor 'addToDo'}}"><img src="/img/plus.png"></a>
+			<ul class="ul-switch">
+				<li> <img src="/img/switch.png">
+					<ul>
+						<li> <a href="{{pathFor 'timeBased'}}"> Time Based View </a> </li>
+						<li> <a href="{{pathFor 'listView'}}"> List View </a> </li>
+					</ul>
+				</li>
+			</ul>
+		</div>
 	</header>
-	<div>
-	{{#if currentUser}}
-		<ul>
-			<li> Switch View
-				<ul>
-					<li> <a href="{{pathFor 'timeBased'}}"> Time Based View </a> </li>
-					<li> <a href="{{pathFor 'listView'}}"> List View </a> </li>
-				</ul>
-			</li>
-		</ul>
-	{{/if}}
-	</div>
 	<div id="main">
-	{{#if currentUser}}
 		<!-- {{> yield}} helper defines a special dynamic zone that will automatically render whichever template corresponds to the current route -->
 		{{> yield}}
-	{{/if}}
 	</div>
+	{{/if}}
 </template>

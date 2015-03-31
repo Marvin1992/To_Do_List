@@ -21,6 +21,16 @@ function daysMaker(count){
 
 
 Template.weeklyTimed.helpers({
+	todayDate: function(){
+		// get the user's current month
+		var currentDate = new Date();
+		var _day = currentDate.getDate();
+		var _month = currentDate.getMonth()+1;
+		var _year = currentDate.getFullYear();
+		var today = ""+_day+"/"+_month+"/"+_year+"";
+
+		return today;
+	},
 	hours: function() {
 		// get the user's current month
 		var currentDate = new Date();
