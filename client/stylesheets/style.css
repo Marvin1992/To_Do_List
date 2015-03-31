@@ -99,8 +99,50 @@
 }
 
 .daily-item{
+	cursor: help;
 	text-align: left;
+	margin-left: 20px;
+	width: 80%;
 }
+
+.edit-title{
+	-webkit-transition: 0.5s; /* Safari */
+    transition: 0.5s;
+	width: 15px;
+	height: 15px;
+	opacity: 0.7;}
+	.edit-title:hover{
+		opacity: 1;
+		-ms-transform: scale(1.2,1.2); /* IE 9 */
+   		-webkit-transform: scale(1.2,1.2); /* Safari */
+    	transform: scale(1.2,1.2);
+	}
+
+.item-paragraph{
+	position: relative;
+	left: 15px;
+}
+
+.check-button-style{
+	height: 50px;
+	width: 50px;
+	position: relative;
+	left: 15px;
+	opacity: 0.7;}
+	.check-button-style:hover{
+		opacity: 1;
+	}
+
+.check-button-img{
+	height: 50px;
+	width: 50px;
+	left: -9px;
+	top: -2px;
+	position: relative;
+}
+
+.is-checked{ background-color: green; }
+.not-checked{ background-color: yellow; }
 
 .dailyTimed-li{
 	margin-left: 1.0%;
