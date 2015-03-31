@@ -103,6 +103,7 @@
 	text-align: left;
 	margin-left: 20px;
 	width: 80%;
+	margin-bottom: 5px;
 }
 
 .edit-title{
@@ -199,6 +200,42 @@
 		background: #FCFCFC;
 		color: #BABABA;
 	}
+
+
+.monthlyTimed-ul-ul{
+	margin-left: 1.0%;
+	width: 70%;
+	/*
+	line-height: 40px;
+	height: 40px;
+	*/
+	font-size: 15px;
+	color: #000;
+	text-align: center;
+	background: #F2EEEE;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #171717;
+	border-radius: 9px;
+	margin-top: 1px;
+	box-shadow: 1px 2px 7px;}
+	.monthlyTimed-ul-ul:hover{
+		background: #FCFCFC;
+		color: #BABABA;
+	}
+
+.monthly-li{
+	text-align: left;
+	width: 50%;
+	line-height: 15px;
+	color: #000;
+	margin-bottom: 5px;
+}
+
+.unchecked{ background: yellow; }
+.checked{ background: green; }
+
+.ul-ul-open{ background: white; }
 
 .date-header {
     list-style-type: none;

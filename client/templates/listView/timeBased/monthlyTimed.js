@@ -38,12 +38,30 @@ Template.monthlyTimed.events({
 			if(target.children().length != 0){
 				// show our to-dos
 				target.children().slideToggle("slow");
+
+				// check if the slide toggle is open
+				if(target.hasClass('ul-ul-open')){
+					target.removeClass('ul-ul-open');
+				} else if(target.is(':visible')){
+					target.addClass('ul-ul-open');
+				}
+
 			} else {
 				// if there are no to-dos redirect the user to create a to-do
 				Router.go('addToDo', {foo: 'bar'}, 
 					{hash: Number(target.text()), query: target.parent()[0].id } );		
 			}
 		}
+	},
+	'change .monthlyTimed-ul-ul': function(){
+		$(".monthlyTimed-ul-ul").each(function() {
+			// if the list is open
+			if($(this).is(':visible')){
+				$(this).addClass('ul-ul-open');
+			} else {
+				$(this).removeClass('ul-ul-open');
+			}
+		});
 	}
 });
 
