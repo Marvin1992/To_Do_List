@@ -1,39 +1,42 @@
 <template name="addToDo">
-	<form>
-		<input name="title" id="title" type="text" value="" placeholder="What need's to be done?" />
-		<input name="description" id="description" type="text" value="" placeholder="Description" />
-	    <label for="time-select">Select a time: </label>
-	    <select name="time-select" id="time-select">
-	    	<option></option>
-	    	<option> 1 </option>
-	    	<option> 2 </option>
-	    	<option> 3 </option>
-	    	<option> 4 </option>
-	    	<option> 5 </option>
-	    	<option> 6 </option>
-	    	<option> 7 </option>
-	    	<option> 8 </option>
-	    	<option> 9 </option>
-	    	<option> 10 </option>
-	    	<option> 11 </option>
-	    	<option> 12 </option>
-	    </select>
-	    <select name="dayTime-select" id="dayTime-select">
-	    	<option></option>
-		    <option> am </option>
-		    <option> pm </option>
-	    </select>
-	    <label for="day-select">Select a date: </label>
-	    <select name="day-select" id="day-select">
-	    	<option></option>
-	    </select> /
-	    <select name="month-select" id="month-select">
-	    	<option></option>
-	    </select> /
-	    <select name="year-select" id="year-select">
-	    	<option></option>
-	    </select>
-		<br>
-		<input type="submit" value="submit" />
+	<form class="to-do-form">
+		<div class="input-field-description">
+			<input class="input-to-do-name" name="title" id="title" type="text" value="" placeholder="What need's to be done?" />
+			<input class="input-to-do-description" name="description" id="description" type="text" value="" placeholder="Description" />
+		</div>
+		<div class="input-field-time">
+		    <label class="selection-label" for="time-select">Select a time: </label>
+		    <select class="s-time-selectBox" name="time-select" id="time-select">
+		    	<option></option>
+		    	<option> 1 </option>
+		    	<option> 2 </option>
+		    	<option> 3 </option>
+		    	<option> 4 </option>
+		    	<option> 5 </option>
+		    	<option> 6 </option>
+		    	<option> 7 </option>
+		    	<option> 8 </option>
+		    	<option> 9 </option>
+		    	<option> 10 </option>
+		    	<option> 11 </option>
+		    	<option> 12 </option>
+		    </select>
+		    <select class="s-time-selectBox" name="dayTime-select" id="dayTime-select">
+		    	<option></option>
+			    <option> am </option>
+			    <option> pm </option>
+		    </select>
+		    <label class="selection-label" for="day-select">Select a date: </label>
+		    <select class="s-time-selectBox" name="day-select" id="day-select">
+		    	<option></option>
+		    </select> /
+		    <select class="s-time-selectBox" name="month-select" id="month-select">
+		    	<option></option>
+		    </select> /
+		    <select class="s-time-selectBox" name="year-select" id="year-select">
+		    	<option></option>
+		    </select>
+	    </div>
+		<input class="add-to-do-button" type="submit" value="Add To-Do" />
 	</form>
 </template>

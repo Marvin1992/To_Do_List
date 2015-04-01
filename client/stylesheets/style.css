@@ -12,9 +12,12 @@
 
 /* home button */
 .home-button{
+	position: relative;
 	float: left;
 	width: 100px;
-	height: 100px;}
+	height: 100px;
+	border-radius: 20px;
+	left: 10px;}
 	.home-button:hover { background: #666;}
 
 .icon{
@@ -25,6 +28,9 @@
 
 /* plus button */
 .plus-button{
+	border-radius: 20px;
+	position: relative;
+  	left: 20px;
 	float: left;
 	width: 100px;
 	height: 100px;}
@@ -315,3 +321,28 @@
 	top: 6px;
 }
 
+/* 	================================  add to-do  ============================= */
+.to-do-form{
+	position: relative;
+	width: 90%;
+	left: 5%;
+	top: 50px;
+}
+
+.add-to-do-button{
+	margin-top: 20px;
+	background-color: #383636;
+	border-color: grey;
+	color: white;
+	border-radius: 17%;
+	width: 150px;
+	height: 50px;
+	font-size: x-large;
+	border-width: 6px;
+	box-shadow: 2px 2px 2px #000;}
+	.add-to-do-button:hover{
+		background-color: #666;
+		border-color: rgb(234, 234, 234);
+		color: rgb(142, 143, 186);
+		box-shadow: 2px 2px 2px rgb(142, 143, 186);	
+	}

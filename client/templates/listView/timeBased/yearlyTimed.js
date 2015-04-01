@@ -15,7 +15,8 @@ Template.yearlyTimed.events({
 		Session.set('selectMonth', _month);
 
 		// notifying everyone that is dependent on _deps that it has changes
-		selection_deps.changed();		
+		selection_deps.changed();	
+
 	},
 	'change #yearlyTimed-select': function(){
 		// get the current user
