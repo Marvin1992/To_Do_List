@@ -64,7 +64,7 @@ Template.weeklyTimed.rendered = function(){
 		// get a reference to our list elements
 		var weeklyTimed_li = $('.weeklyTimed-li');
 
-		// change the weekly view
+		// change the weekly view - add both time systems (military time & us time)
 		changeTimeDisplay(weeklyTimed_li);
 
 	// even a delay of 0ms helps rendering the list

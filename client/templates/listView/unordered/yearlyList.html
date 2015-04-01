@@ -1,8 +1,10 @@
 <template name="yearlyList">
 	<div> {{> listView}} </div>
-	<select name="yearly-select" id="yearly-select">
-    	<option></option>
-    </select>
+	<div class="time-selection">
+		<p class="time-id">YYYY </p><select class="s-selectBox" name="yearly-select" id="yearly-select">
+	    	<option></option>
+	    </select>
+    </div>
 	<ul class="yearlyList-ul" id="yearly-list-ul">
 		{{#each yearly}}
 			{{> toDoItem}}

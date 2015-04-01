@@ -42,6 +42,14 @@ Template.yearlyTimed.events({
 			if(target.children().length != 0){
 				// show our to-dos
 				target.children().slideToggle("slow");
+
+				// check if the slide toggle is open
+				if(target.hasClass('ul-ul-open')){
+					target.removeClass('ul-ul-open');
+				} else if(target.is(':visible')){
+					target.addClass('ul-ul-open');
+				}
+
 			} else {
 				// if there are no to-dos redirect the user to create a to-do
 				Router.go('addToDo', {foo: 'bar'}, 
@@ -73,7 +81,6 @@ Template.yearlyTimed.helpers({
 
 		return days;
 	},
-
 	todosForDay: function() {
 		// creates a dependency between the accessor of "todosForDay" and the _deps
 		selection_deps.depend();
@@ -88,12 +95,25 @@ Template.yearlyTimed.helpers({
 			year: _year,
 			day: this.getDate()  
 		});
+	},
+	selectionMonth: function(){
+		if(Session.get('selectMonth') != ''){
+			return Session.get('selectMonth');
+		} else {
+			return '';
+		}
+	},
+	selectionYear: function(){
+		if(Session.get('selectYear') != ''){
+			return Session.get('selectYear');
+		} else {
+			return '';
+		}
 	}
 });
 
 
 Template.yearlyTimed.created = function(){
-
 	Meteor.setTimeout(function(){
 		// get a reference to our month selectors
 		var $selectedMonth = $('#monthlyTimed-select');

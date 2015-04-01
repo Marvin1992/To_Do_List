@@ -1,5 +1,4 @@
 Template.monthlyTimed.helpers({
-	
 	datesInCurrentMonth: function() {
 		// get the user's current month
 		var currentDate = new Date();
@@ -14,7 +13,6 @@ Template.monthlyTimed.helpers({
 
 		return days;
 	},
-
 	todosForDay: function() {
 		return To_Dos.find({
 			author: Meteor.user().username, 
@@ -54,6 +52,7 @@ Template.monthlyTimed.events({
 		}
 	}
 });
+
 
 Template.monthlyTimed.rendered = function(){
 	$(".monthlyTimed-ul-ul").each(function() {

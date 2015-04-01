@@ -1,11 +1,13 @@
 <template name="yearlyTimed">
 	<div> {{> timeBased}} </div>
-	<select name="monthlyTimed-select" id="monthlyTimed-select">
-    	<option></option>
-    </select>
-    <select name="yearlyTimed-select" id="yearlyTimed-select">
-    	<option></option>
-    </select>
+    <div class="time-selection">
+    	<p class="time-id">MM </p><select class="s-selectBox" name="monthlyTimed-select" id="monthlyTimed-select">
+        	<option>{{selectionMonth}}</option>
+        </select>
+        <p class="time-id">YYYY </p><select class="s-selectBox" name="yearlyTimed-select" id="yearlyTimed-select">
+        	<option>{{selectionYear}}</option>
+        </select>
+    </div>
     <ul class="yearlyTimed-ul" id="yearlyTimed-ul">
         {{#each datesInCurrentMonth}}
             <ul class="date-header yearlyTimed-ul-ul">

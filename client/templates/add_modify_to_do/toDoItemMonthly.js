@@ -30,3 +30,17 @@ Template.toDoItemMonthly.events({
 
 	}
 });
+
+
+Template.toDoItemMonthly.rendered = function(){
+	$(".yearlyTimed-ul-ul").each(function() {
+		// if the yearly timed has a to-do add a class that can be styled
+		if($(this).children().length != 0){
+			if($(this).find('#checked').hasClass('not-checked')){
+				$(this).addClass("unchecked");
+			} else {
+				$(this).addClass('checked');
+			}
+		}
+	});	
+}

@@ -2,7 +2,7 @@
 	<div> {{> timeBased}} </div>
 	<ul class="monthlyTimed-ul" id="monthlyTimed-ul">
         {{#each datesInCurrentMonth}}
-            <ul class="date-header monthlyTimed-ul-ul">
+            <ul class="date-header monthlyTimed-ul-ul {{checkedStatus}}">
                 {{getDate}}
               
 	            {{#each todosForDay}}

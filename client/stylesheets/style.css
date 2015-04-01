@@ -100,6 +100,29 @@
 	margin-top: 20px;
 }
 
+.date-header {
+    list-style-type: none;
+}
+
+.display-buttons{
+	margin-bottom: 25px;
+	margin-left: 15px;
+	background-color: #383636;
+	border-color: grey;
+	color: white;
+	border-radius: 17%;
+	width: 135px;
+	height: 50px;
+	font-size: x-large;
+	border-width: 6px;
+	box-shadow: 2px 2px 2px #000;}
+	.display-buttons:hover{
+		background-color: #666;
+		border-color: rgb(234, 234, 234);
+		color: rgb(142, 143, 186);
+		box-shadow: 2px 2px 2px rgb(142, 143, 186);	
+	}
+
 /* 	================================  daily section ============================= */
 .daily-item{
 	cursor: help;
@@ -209,10 +232,6 @@
 .monthlyTimed-ul-ul{
 	margin-left: 1.0%;
 	width: 70%;
-	/*
-	line-height: 40px;
-	height: 40px;
-	*/
 	font-size: 15px;
 	color: #000;
 	text-align: center;
@@ -236,30 +255,63 @@
 	margin-bottom: 5px;
 }
 
+/* 	================================  yearly section ============================= */
+.yearlyTimed-ul-ul{
+	margin-left: 1.0%;
+	width: 70%;
+	font-size: 15px;
+	color: #000;
+	text-align: center;
+	background: #F2EEEE;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #171717;
+	border-radius: 9px;
+	margin-top: 1px;
+	box-shadow: 1px 2px 7px;}
+	.yearlyTimed-ul-ul:hover{
+		background: #FCFCFC;
+		color: #BABABA;
+	}
+
 .unchecked{ background: yellow; }
 .checked{ background: green; }
 
 .ul-ul-open{ background: white; }
 
-.date-header {
-    list-style-type: none;
+.time-selection{
+	position: absolute;
+	right: 5%;
+	display: inline;
+	background: #222222;
+	height: 55px;
+	width: 230px;
+	border-radius: 7px;
+	box-shadow: 2px 3px 7px #555;
+	color: rgb(237, 236, 236);
+	text-shadow: 1px 1px 2px #fefefe;
 }
 
-.display-buttons{
-	margin-bottom: 25px;
-	margin-left: 15px;
-	background-color: #383636;
-	border-color: grey;
-	color: white;
-	border-radius: 17%;
-	width: 135px;
-	height: 50px;
-	font-size: x-large;
-	border-width: 6px;
-	box-shadow: 2px 2px 2px #000;}
-	.display-buttons:hover{
-		background-color: #666;
-		border-color: rgb(234, 234, 234);
-		color: rgb(142, 143, 186);
-		box-shadow: 2px 2px 2px rgb(142, 143, 186);	
-	}
+.s-selectBox{
+	float: left;
+	background: #323232;
+	color: #fefefe;
+	width: 60px;
+	height: 40px;
+	border-radius: 5px;
+	border-bottom: 2px;
+	border-bottom-style: solid;
+	border-color: rgb(92, 82, 82);
+	box-shadow: 2px 2px 2px #555;
+	position: relative;
+    top: 5px;
+}
+
+.time-id{
+	float: left;
+	margin-right: 5px;
+	margin-left: 5px;
+	position: relative;
+	top: 6px;
+}
+
