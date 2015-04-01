@@ -321,7 +321,7 @@
 	top: 6px;
 }
 
-/* 	================================  add to-do  ============================= */
+/* 	================================  add/edit to-do  ============================= */
 .to-do-form{
 	position: relative;
 	width: 90%;
@@ -329,8 +329,63 @@
 	top: 50px;
 }
 
+.input-field-description{
+	margin-top: 10px;
+	background: #222222;
+	height: 60px;
+	width: 450px;
+	border-radius: 8px;
+	box-shadow: 2px 2px 2px #555;
+	color: #fefefe;
+}
+
+.input-field-time{
+	margin-top: 10px;
+	background: #222222;
+	height: 65px;
+	width: 560px;
+	border-radius: 8px;
+	box-shadow: 2px 2px 2px #555;
+}
+
+.input-to-do-text{
+	background: #323232;
+	color: #fefefe;
+	width: 215px;
+	height: 40px;
+	border-radius: 5px;
+	border-bottom: 2px;
+	border-bottom-style: solid;
+	border-color: rgb(92, 82, 82);
+	box-shadow: inset 2px 2px 2px #555;
+	position: relative;
+	top: 7px;
+	left: 5px;
+}
+
+.selection-label{
+	color: #fefefe !important;
+	margin-left: 10px;
+	position: relative;
+	top: 5px;
+}
+
+.s-time-selectBox{
+	background: #323232;
+	color: #fefefe;
+	width: 60px;
+	height: 40px;
+	border-radius: 5px;
+	border-bottom: 2px;
+	border-bottom-style: solid;
+	border-color: rgb(92, 82, 82);
+	box-shadow: 2px 2px 2px #555;
+	position: relative;
+    top: 10px;
+}
+
 .add-to-do-button{
-	margin-top: 20px;
+	margin-top: 30px;
 	background-color: #383636;
 	border-color: grey;
 	color: white;
@@ -346,3 +401,28 @@
 		color: rgb(142, 143, 186);
 		box-shadow: 2px 2px 2px rgb(142, 143, 186);	
 	}
+
+.delete-to-do{
+	transition: 1s all;
+	margin-top: 30px;
+	margin-left: 20px;
+	background-color: #D82222;
+	border-color: rgb(187, 72, 72);
+	border-radius: 17%;
+	width: 185px;
+	height: 50px;
+	color: #000;
+	font-weight: bold;
+	font-size: x-large;
+	border-width: 6px;
+	box-shadow: 2px 2px 2px #000;}
+	.delete-to-do:hover{
+		background-color: #E04040;
+		border-color: rgb(215, 116, 116);
+		color: #561B1B;
+		box-shadow: 2px 2px 2px rgb(142, 143, 186);	
+	    -ms-transform: scale(1.05, 1.05); /* IE 9 */
+	   	-webkit-transform: scale(1.05, 1.05); /* Safari */
+	    transform: scale(1.05, 1.05);
+	}
+}

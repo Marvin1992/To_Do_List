@@ -1,8 +1,8 @@
 <template name="addToDo">
 	<form class="to-do-form">
 		<div class="input-field-description">
-			<input class="input-to-do-name" name="title" id="title" type="text" value="" placeholder="What need's to be done?" />
-			<input class="input-to-do-description" name="description" id="description" type="text" value="" placeholder="Description" />
+			<input class="input-to-do-text" name="title" id="title" type="text" value="" placeholder="What need's to be done?" />
+			<input class="input-to-do-text" name="description" id="description" type="text" value="" placeholder="Description" />
 		</div>
 		<div class="input-field-time">
 		    <label class="selection-label" for="time-select">Select a time: </label>
@@ -37,6 +37,7 @@
 		    	<option></option>
 		    </select>
 	    </div>
+	    <hr/>
 		<input class="add-to-do-button" type="submit" value="Add To-Do" />
 	</form>
 </template>

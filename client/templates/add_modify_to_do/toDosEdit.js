@@ -68,7 +68,7 @@ Template.toDosEdit.events({
 		});
 	},
 
-	'click .delete': function(e){
+	'click .delete-to-do': function(e){
 		e.preventDefault();
 
 		// ask the user a confirmation question whether to delete the to do or not
