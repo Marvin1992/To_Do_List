@@ -10,4 +10,3 @@ underscore
 iron:router
 sacha:spin
 accounts-password
-accounts-ui-unstyled
