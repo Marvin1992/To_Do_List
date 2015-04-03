@@ -7,7 +7,7 @@ body{
 	background-size: cover;
 }
 
-/* 	================================  daily section ============================= */
+/* 	================================  Login Form ============================= */
 .login-logging-section{
 	position: absolute;
 	width: 25%;
@@ -79,9 +79,11 @@ body{
 	color: #fefefe;
 }
 
+/*
 .login-link-and-dropdown-list a{
 	color: #000;
 }
+*/
 
 .login-button.login-button-form-submit{
 	position: absolute;
@@ -92,7 +94,7 @@ body{
 	font-size: 15px;
 	font-weight: bold;
 	text-shadow: 1px 2px 1px #A89393;
-	width: 125px;
+	width: 35%;
 	border-radius: 7px;
 	background: #486160;
 	box-shadow: 1px 1px 1px #9E9191;}
@@ -109,7 +111,7 @@ body{
 
 .additional-link{
 	position: absolute;
-	width: 125px;
+	width: 35%;
 	bottom: 10px;
 	right: 18px;
 	text-align: center;
@@ -142,6 +144,17 @@ body{
 	right: 5px;
 	color: #fefefe;
 }
+
+/* 	================================  Logged Form ============================= */
+.logged-in-form.login-link-and-dropdown-list{
+	right: 20%;
+	color: #fefefe;
+	width: 600px;
+	height: 100px;
+	position: absolute;
+}
+
+
 
 /* HEADER SECTION */
 /* HEADER SECTION */
@@ -587,6 +600,7 @@ body{
 	position: relative;
 	left: 15%;
 	top: 50px;
+	opacity: 0.9;
 }
 
 .greeting{
