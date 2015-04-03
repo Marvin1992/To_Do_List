@@ -1,13 +1,15 @@
 <!--           -->
 <!-- LOGGED IN -->
 <!--           -->
+
+<!-- *** modified login *** -->
 <template name="_loginButtonsLoggedInDropdown">
   <div class="login-link-and-dropdown-list">
     <a class="login-link-text" id="login-name-link">
       {{displayName}} ▾
     </a>
 
-    {{#if dropdownVisible}}
+  {{#if dropdownVisible}} 
       <div id="login-dropdown-list" class="accounts-dialog">
         <a class="login-close-text">Close</a>
         <div class="login-close-text-clear"></div>
@@ -22,9 +24,36 @@
           {{/if}}
         {{/if}}
       </div>
-    {{/if}}
+  {{/if}}
   </div>
 </template>
+
+<!--
+<template name="_loginButtonsLoggedInDropdown">
+  <div class="login-link-and-dropdown-list">
+    <a class="login-link-text" id="login-name-link">
+      {{displayName}} ▾
+    </a>
+
+  {{#if dropdownVisible}} 
+      <div id="login-dropdown-list" class="accounts-dialog">
+        <a class="login-close-text">Close</a>
+        <div class="login-close-text-clear"></div>
+
+        {{#if inMessageOnlyFlow}}
+          {{> _loginButtonsMessages}}
+        {{else}}
+          {{#if inChangePasswordFlow}}
+            {{> _loginButtonsChangePassword}}
+          {{else}}
+            {{> _loginButtonsLoggedInDropdownActions}}
+          {{/if}}
+        {{/if}}
+      </div>
+  {{/if}}
+  </div>
+</template>
+-->
 
 <template name="_loginButtonsLoggedInDropdownActions">
   {{#if allowChangingPassword}}
@@ -43,14 +72,16 @@
 <!--            -->
 <!-- LOGGED OUT -->
 <!--            -->
+
+<!-- 
 <template name="_loginButtonsLoggedOutDropdown">
   <div class="login-link-and-dropdown-list {{additionalClasses}}">
-    {{#if dropdownVisible}}
+  {{#if dropdownVisible}}
       {{! This text is covered by the dropdown, but duplicating it here
           makes the position of "Close" match the position of this text. }}
       <a class="login-link-text" id="login-sign-in-link">Sign in ▾</a>
       <div id="login-dropdown-list" class="accounts-dialog">
-        <a class="login-close-text">Close</a>
+      <a class="login-close-text">Close</a>
         {{#if loggingIn}}
           {{> _loginButtonsLoggingIn}}
         {{/if}}
@@ -64,7 +95,21 @@
       {{else}}
         <a class="login-link-text" id="login-sign-in-link">Sign in ▾</a>
       {{/if}}
-    {{/if}}
+  {{/if}}
+  </div>
+</template>
+-->
+
+<!-- *** modified login *** -->
+<template name="_loginButtonsLoggedOutDropdown">
+  <div class="login-logging-section login-link-and-dropdown-list {{additionalClasses}}">
+      <div id="login-dropdown-list" class="accounts-dialog">
+        {{#if loggingIn}}
+          {{> _loginButtonsLoggingIn}}
+        {{/if}}
+        <div class="login-close-text-clear"></div>
+        {{> _loginButtonsLoggedOutAllServices}}
+      </div>
   </div>
 </template>
 

@@ -76,10 +76,10 @@ dropdown = function () {
 // XXX these will become configurable, and will be validated on
 // the server as well.
 validateUsername = function (username) {
-  if (username.length >= 3) {
+  if (username.length >= 5) {
     return true;
   } else {
-    loginButtonsSession.errorMessage("Username must be at least 3 characters long");
+    loginButtonsSession.errorMessage("Username must be at least 5 characters long");
     return false;
   }
 };
