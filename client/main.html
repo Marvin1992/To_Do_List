@@ -8,5 +8,11 @@
 	<header class="login-header-section">
 		{{> loginButtons}}
 	</header>
-	<footer class="footer-section">&copy; Marvin Baumgart</footer>
+	{{#unless currentUser}}
+		{{> footer}}
+	{{/unless}}
 </body>
+
+<template name="footer">
+	<footer class="footer-section">&copy; Marvin Baumgart</footer>
+</template>

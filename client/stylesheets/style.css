@@ -137,7 +137,7 @@ body{
 }
 
 .footer-section{
-	position: absolute;
+	position: fixed;
 	bottom: 2px;
 	right: 5px;
 	color: #fefefe;
