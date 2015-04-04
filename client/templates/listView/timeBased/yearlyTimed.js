@@ -16,7 +16,6 @@ Template.yearlyTimed.events({
 
 		// notifying everyone that is dependent on _deps that it has changes
 		selection_deps.changed();	
-
 	},
 	'change #yearlyTimed-select': function(){
 		// get the current user

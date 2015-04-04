@@ -10,3 +10,4 @@ underscore
 iron:router
 sacha:spin
 accounts-password
+multiply:iron-router-progress
