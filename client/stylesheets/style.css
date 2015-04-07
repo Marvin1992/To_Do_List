@@ -30,6 +30,7 @@ body{
 
 .login-logging-section .login-form.login-password-form label{
 	color: rgb(111, 107, 107);
+	width: 100%;
 }
 
 .login-logging-section .login-header-section a{ 
@@ -125,7 +126,7 @@ body{
 		box-shadow: 1px 1px 1px #C7B5B5;
 	}
 
-.message.error-message{
+.login-logging-section .message.error-message{
 	position: relative;
 	top: 150px;
 	color: red;
@@ -139,7 +140,7 @@ body{
 	color: #fefefe;
 }
 
-/* 	================================  Logged Form ============================= */
+/* 	================================  Logged in Form ============================= */
 .logged-in-form.login-link-and-dropdown-list{
 	left: 20%;
 	color: #fefefe;
