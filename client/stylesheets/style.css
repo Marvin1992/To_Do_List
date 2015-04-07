@@ -21,27 +21,27 @@ body{
 	opacity: 0.95;
 }
 
-.login-form.login-password-form{
+.login-logging-section .login-form.login-password-form{
 	padding-left: 20px;
 	padding-right: 20px;
 	position: relative;
 	height: 400px;
 }
 
-.login-form.login-password-form label{
+.login-logging-section .login-form.login-password-form label{
 	color: rgb(111, 107, 107);
 }
 
-.login-header-section a{ 
+.login-logging-section .login-header-section a{ 
 	color: #fefefe;
 }
 
-#login-username-label-and-input{
+.login-logging-section #login-username-label-and-input{
 	top: 100px;
 	left: 10%;
 	position: relative;
 }
-#login-username{
+.login-logging-section #login-username{
 	color: #000;
 	border-radius: 6px;
 	height: 35px;
@@ -49,12 +49,12 @@ body{
 	box-shadow: 2px 2px 1px #A59F9F;
 }
 
-#login-password-label-and-input{
+.login-logging-section #login-password-label-and-input{
 	top: 120px;
 	left: 10%;
 	position: relative;
 }
-#login-password{
+.login-logging-section #login-password{
 	color: #000;
 	border-radius: 6px;
 	height: 35px;
@@ -62,12 +62,12 @@ body{
 	box-shadow: 2px 2px 1px #A59F9F;
 }
 
-#login-password-again-label-and-input{
+.login-logging-section #login-password-again-label-and-input{
 	position: relative;
 	top: 140px;
 	left: 10%;
 }
-#login-password-again{
+.login-logging-section #login-password-again{
 	color: #000;
 	border-radius: 6px;
 	height: 35px;
@@ -75,17 +75,11 @@ body{
 	box-shadow: 2px 2px 1px #A59F9F;
 }
 
-#signup-link{
+.login-logging-section #signup-link{
 	color: #fefefe;
 }
 
-/*
-.login-link-and-dropdown-list a{
-	color: #000;
-}
-*/
-
-.login-button.login-button-form-submit{
+.login-logging-section .login-button.login-button-form-submit{
 	position: absolute;
 	bottom: 10px;
 	height: 35px;
@@ -98,18 +92,18 @@ body{
 	border-radius: 7px;
 	background: #486160;
 	box-shadow: 1px 1px 1px #9E9191;}
-	.login-button.login-button-form-submit:hover{
+	.login-logging-section .login-button.login-button-form-submit:hover{
 		text-shadow: 1px 2px 1px #C5B5B5;
 		color: rgb(208, 208, 208);
 		background: #5E807E;
 		box-shadow: 1px 1px 1px #C7B5B5;
 	}
 
-.additional-link-container a{
+.login-logging-section .additional-link-container a{
 	color: #fefefe;
 }
 
-.additional-link{
+.login-logging-section .additional-link{
 	position: absolute;
 	width: 35%;
 	bottom: 10px;
@@ -123,7 +117,7 @@ body{
 	font-weight: bold;
 	height: 35px;
 	line-height: 30px;}
-	.additional-link:hover{
+	.login-logging-section .additional-link:hover{
 		text-decoration: none;
 		text-shadow: 1px 2px 1px #C5B5B5;
 		color: rgb(208, 208, 208);
@@ -147,13 +141,205 @@ body{
 
 /* 	================================  Logged Form ============================= */
 .logged-in-form.login-link-and-dropdown-list{
-	right: 20%;
+	left: 20%;
 	color: #fefefe;
 	width: 600px;
 	height: 100px;
 	position: absolute;
 }
 
+.logged-in-form #login-dropdown-list{
+	position: absolute;
+	left: 20%;
+}
+
+.logged-in-form .login-link-text{
+	position: absolute;
+	height: 100px;
+  	width: 100px;
+  	border-radius: 20px;
+	background-image: url("/img/user.png");
+	background-repeat: no-repeat;
+	background-position: 13px 14px;
+	text-align: center;
+	color: rgba(0, 0, 0, 0);}
+	.logged-in-form .login-link-text:hover{
+		background-color: #666;
+	}
+
+.logged-in-form .login-close-text{
+	position: absolute;
+	top: 10px;
+	height: 35px;
+	color: #fefefe;
+	text-align: center;
+	line-height: 30px;
+	font-size: 15px;
+	font-weight: bold;
+	text-shadow: 1px 2px 1px #A89393;
+	width: 150px;
+	border-radius: 7px;
+	background: #486160;
+	box-shadow: 1px 1px 1px #9E9191;}
+	.logged-in-form .login-close-text:hover{
+		text-decoration: none;
+		text-shadow: 1px 2px 1px #C5B5B5;
+		color: rgb(208, 208, 208);
+		background: #5E807E;
+		box-shadow: 1px 1px 1px #C7B5B5;		
+	}
+
+.logged-in-form #login-buttons-open-change-password{
+	position: absolute;
+	top: 55px;
+	height: 35px;
+	color: #fefefe;
+	text-align: center;
+	line-height: 30px;
+	font-size: 15px;
+	font-weight: bold;
+	text-shadow: 1px 2px 1px #A89393;
+	width: 150px;
+	border-radius: 7px;
+	background: #486160;
+	box-shadow: 1px 1px 1px #9E9191;}
+	.logged-in-form #login-buttons-open-change-password:hover{
+		text-shadow: 1px 2px 1px #C5B5B5;
+		color: rgb(208, 208, 208);
+		background: #5E807E;
+		box-shadow: 1px 1px 1px #C7B5B5;	
+	}
+
+.logged-in-form #login-buttons-logout{
+	position: absolute;
+	left: 160px;
+	top: 55px;
+	height: 35px;
+	color: #fefefe;
+	text-align: center;
+	line-height: 30px;
+	font-size: 15px;
+	font-weight: bold;
+	text-shadow: 1px 2px 1px #918A3A;
+	width: 90px;
+	border-radius: 7px;
+	background: #A7AD51;
+	box-shadow: 1px 1px 1px #9E9191;}
+	.logged-in-form #login-buttons-logout:hover{
+		text-shadow: 1px 2px 1px #BEB54D;
+		background: #C9D063;
+		box-shadow: 1px 1px 1px #9E9191;
+	}
+
+.logged-in-form #login-buttons-do-change-password{
+	position: absolute;
+	top: 55px;
+	height: 35px;
+	color: #fefefe;
+	text-align: center;
+	line-height: 30px;
+	font-size: 15px;
+	font-weight: bold;
+	text-shadow: 1px 2px 1px #918A3A;
+	width: 150px;
+	border-radius: 7px;
+	background: #A7AD51;
+	box-shadow: 1px 1px 1px #9E9191;}
+	.logged-in-form #login-buttons-do-change-password:hover{
+		text-shadow: 1px 2px 1px #BEB54D;
+		background: #C9D063;
+		box-shadow: 1px 1px 1px #9E9191;
+	}
+
+
+/* old password */
+.logged-in-form #login-old-password-label-and-input{
+	position: absolute; 
+	left: 200px;
+}
+
+.logged-in-form #login-old-password{
+	position: relative;
+	bottom: 19px;
+	left: 165px;
+	color: #000;
+	border-radius: 6px;
+	height: 25px;
+	width: 175px;
+	box-shadow: 2px 2px 1px #A59F9F;
+}
+
+.logged-in-form #login-old-password-label{
+	position: relative;
+	top: 10px;
+	color: rgb(203, 192, 192);
+}
+
+/* new password */
+.logged-in-form #login-password-label-and-input{
+	position: absolute; 
+	left: 200px;
+	top: 40px;
+}
+
+.logged-in-form #login-password{
+	position: relative;
+	left: 165px;
+	bottom: 26px;
+	color: #000;
+	border-radius: 6px;
+	height: 25px;
+	width: 175px;
+	box-shadow: 2px 2px 1px #A59F9F;	
+}
+
+.logged-in-form #login-password-label{
+	position: relative;
+	top: 3px;
+	color: rgb(203, 192, 192);
+}
+
+/* repeat password */
+.logged-in-form #login-password-again-label-and-input{
+	position: absolute; 
+	left: 200px;
+	top: 80px;		
+}
+
+.logged-in-form #login-password-again{
+	position: relative;
+	left: 165px;
+	bottom: 33px;
+	color: #000;
+	border-radius: 6px;
+	height: 25px;
+	width: 175px;
+	box-shadow: 2px 2px 1px #A59F9F;
+}
+
+.logged-in-form #login-password-again-label{
+	position: relative;
+	top: -3px;
+	color: rgb(203, 192, 192);
+}
+
+.logged-in-form .message.info-message{
+	color: #FF0000;
+	position: relative;
+	top: 60px;
+	left: 12px;
+	font-weight: bold;
+	text-shadow: 0.7px 0.2px 0.3px #000;
+}
+
+.logged-in-form .message.error-message{
+	position: relative;
+	top: 115px;
+	left: 200px;
+	color: red;
+	font-weight: bold;
+	text-shadow: 0.7px 0.2px 0.3px #000;
+}
 
 
 /* HEADER SECTION */
@@ -289,10 +475,11 @@ body{
 
 /* 	================================  daily section ============================= */
 .daily-item{
+	word-wrap: break-word;
 	cursor: help;
 	text-align: left;
 	margin-left: 20px;
-	width: 80%;
+	width: 82%;
 	margin-top: 2px;
 	margin-bottom: 5px;
 	background: #fefefe;
@@ -301,6 +488,11 @@ body{
 	border-width: 1px;
 	padding-bottom: 5px;
 	padding-left: 5px;
+}
+
+.item-opener{
+	display: none; 
+	padding-right: 19px;
 }
 
 .edit-title{
@@ -445,8 +637,8 @@ body{
 		color: #BABABA;
 	}
 
-.unchecked{ background: yellow; }
-.checked{ background: green; }
+.unchecked{ transition: 1s ease-in-out; background: yellow; }
+.checked{ transition: 1s ease-in-out; background: green; }
 
 .ul-ul-open{ background: white; }
 

@@ -10,7 +10,7 @@
     </div>
     <ul class="yearlyTimed-ul" id="yearlyTimed-ul">
         {{#each datesInCurrentMonth}}
-            <ul class="date-header yearlyTimed-ul-ul">
+            <ul class="date-header yearlyTimed-ul-ul {{checkedStatus}}">
                 {{getDate}}
               
 	            {{#each todosForDay}}

@@ -20,6 +20,19 @@ Template.monthlyTimed.helpers({
 			year: this.getFullYear(),
 			day: this.getDate()  
 		});
+	},
+	checkedStatus: function(){
+		// get a reference to this
+		var $this = $(this);
+
+		// if the monthly timed has a to-do add a class that can be styled
+		if($this.children().length != 0){
+			if($this.find('#checked').hasClass('not-checked')){
+				return 'unchecked';
+			} else {
+				return 'checked';
+			}
+		} 
 	}
 });
 
@@ -52,17 +65,3 @@ Template.monthlyTimed.events({
 		}
 	}
 });
-
-
-Template.monthlyTimed.rendered = function(){
-	$(".monthlyTimed-ul-ul").each(function() {
-		// if the monthly timed has a to-do add a class that can be styled
-		if($(this).children().length != 0){
-			if($(this).find('#checked').hasClass('not-checked')){
-				$(this).addClass("unchecked");
-			} else {
-				$(this).addClass('checked');
-			}
-		}
-	});	
-}

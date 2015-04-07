@@ -97,6 +97,7 @@ Template.yearlyTimed.helpers({
 		});
 	},
 	selectionMonth: function(){
+		// fill the monthly selection
 		if(Session.get('selectMonth') != ''){
 			return Session.get('selectMonth');
 		} else {
@@ -104,11 +105,34 @@ Template.yearlyTimed.helpers({
 		}
 	},
 	selectionYear: function(){
+		// fill the yearly selection
 		if(Session.get('selectYear') != ''){
 			return Session.get('selectYear');
 		} else {
 			return '';
 		}
+	},
+	checkedStatus: function(){
+		// creates a dependency between the accessor of "todosForDay" and the _deps
+		selection_deps.depend();
+
+		// get a reference to this
+		var $this = $(this);
+
+		// get the current i we are on from the javascript date object
+		var current_i = Number(String($this[0]).split(" ")[2]);
+
+		// get the current element
+		var current_elem = $(".yearlyTimed-ul-ul").eq(current_i-1);
+
+		// if the yearly timed has a to-do add a class that can be styled
+		if(current_elem.children().length != 0){
+			if(current_elem.find('#checked').hasClass('not-checked')){
+				return 'unchecked';
+			} else {
+				return 'checked';
+			}
+		} 
 	}
 });
 

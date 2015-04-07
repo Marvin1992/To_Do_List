@@ -31,16 +31,39 @@ Template.toDoItemMonthly.events({
 	}
 });
 
-
+// after yearly or monthly to-dos have been rendered check if their checkedStatus
 Template.toDoItemMonthly.rendered = function(){
 	$(".yearlyTimed-ul-ul").each(function() {
+		// get a reference to this
+		var $this = $(this);
+
 		// if the yearly timed has a to-do add a class that can be styled
-		if($(this).children().length != 0){
-			if($(this).find('#checked').hasClass('not-checked')){
-				$(this).addClass("unchecked");
+		if($this.children().length != 0){
+			if($this.find('#checked').hasClass('not-checked')){
+				$this.addClass("unchecked");
 			} else {
-				$(this).addClass('checked');
+				$this.addClass('checked');
+			} 
+		} else {
+			$this.removeClass('checked');
+			$this.removeClass('unchecked');
+		}
+	});	
+
+	$(".monthlyTimed-ul-ul").each(function() {
+		// get a reference to this
+		var $this = $(this);
+
+		// if the monthly timed has a to-do add a class that can be styled
+		if($this.children().length != 0){
+			if($this.find('#checked').hasClass('not-checked')){
+				$this.addClass('unchecked');
+			} else {
+				$this.addClass('checked');
 			}
+		} else {
+			$this.removeClass('checked');
+			$this.removeClass('unchecked');
 		}
 	});	
 }
