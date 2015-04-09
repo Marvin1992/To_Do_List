@@ -3,6 +3,9 @@
 	<div class="time-selection">
 		<p class="time-id">YYYY </p><select class="s-selectBox" name="yearly-select" id="yearly-select">
 	    	<option></option>
+	    	{{#each NYearsFromNow 10}}
+	    		<option>{{.}}</option>
+	    	{{/each}}
 	    </select>
     </div>
 	<ul class="yearlyList-ul" id="yearly-list-ul">

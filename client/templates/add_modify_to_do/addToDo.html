@@ -29,12 +29,30 @@
 		    <label class="selection-label" for="day-select">Select a date: </label>
 		    <select class="s-time-selectBox" name="day-select" id="day-select">
 		    	<option></option>
+    	    	{{#each datesInMonth}}
+    				<option>{{getDate}}</option>
+    	    	{{/each}}
 		    </select> /
 		    <select class="s-time-selectBox" name="month-select" id="month-select">
-		    	<option></option>
+				<option></option>
+				<option> 1 </option>
+				<option> 2 </option>
+				<option> 3 </option>
+				<option> 4 </option>
+				<option> 5 </option>
+				<option> 6 </option>
+				<option> 7 </option>
+				<option> 8 </option>
+				<option> 9 </option>
+				<option> 10 </option>
+				<option> 11 </option>
+				<option> 12 </option>
 		    </select> /
 		    <select class="s-time-selectBox" name="year-select" id="year-select">
 		    	<option></option>
+    	    	{{#each NYearsFromNow 10}}
+    				<option>{{.}}</option>
+    	    	{{/each}}
 		    </select>
 	    </div>
 	    <hr/>

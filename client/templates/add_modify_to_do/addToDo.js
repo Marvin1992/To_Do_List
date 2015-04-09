@@ -97,66 +97,6 @@ Template.addToDo.events({
 });
 
 
-Template.addToDo.created = function(){
-
-	Meteor.setTimeout(function(){
-
-		// get a reference to our day selectors
-		var $selectDay = $('#day-select');
-		var $selectMonth = $('#month-select');
-		var $selectYear = $('#year-select');
-
-		// get the user's day
-		var currentDate = new Date();
-		var _day = currentDate.getDate();
-		var _month = currentDate.getMonth() + 1;
-		var _year = currentDate.getFullYear();	
-
-		// get the total days in the current month
-		var totalDays = daysInMonth(_month, _year);
-
-		// add the days to the selector
-		for(var i=1; i<totalDays+1; i++){
-			// create new option
-			var $option = $('<option>');
-
-			// give the option some text
-			$option.text(i);
-
-			// append the option to the selectDay
-			$selectDay.append($option);
-		}
-
-		// add the month to the selector
-		for(var i=1; i<13; i++){
-			// create new option
-			var $option = $('<option>');
-
-			// give the option some text
-			$option.text(i);
-
-			// append the option to the selectDay
-			$selectMonth.append($option);
-		}
-
-		// add the possible years to the selector
-		for(var i=_year; i<_year+10; i++){
-			// create new option
-			var $option = $('<option>');
-
-			// give the option some text
-			$option.text(i);
-
-			// append the option to the selectDay
-			$selectYear.append($option);
-		}
-
-	// even a delay of 0ms helps rendering
-	}, 0);
-
-}
-
-
 Template.addToDo.rendered = function(){
 
 	Meteor.setTimeout(function(){

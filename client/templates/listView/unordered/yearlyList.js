@@ -42,31 +42,3 @@ Template.yearlyList.helpers({
 		}
 	}
 });
-
-
-Template.yearlyList.created = function(){
-
-	Meteor.setTimeout(function(){
-
-		// get a reference to our day selectors
-		var $selectedYear = $('#yearly-select');
-
-		// get the user's year
-		var currentDate = new Date();
-		var _year = currentDate.getFullYear();
-
-		// add the possible years to the selector
-		for(var i=_year; i<_year+10; i++){
-			// create new option
-			var $option = $('<option>');
-
-			// give the option some text
-			$option.text(i);
-
-			// append the option to the selectDay
-			$selectedYear.append($option);
-		}
-
-	// even a delay of 0ms helps rendering
-	}, 0);
-}

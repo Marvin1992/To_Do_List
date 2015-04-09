@@ -784,6 +784,18 @@ body{
 	    transform: scale(1.05, 1.05);
 	}
 
+/* 	================================  List View  ============================= */
+.dailyList-ul{ width: 80%; }
+.weeklyList-ul{ width: 80%; }
+.monthlyList-ul{ width: 80%; }
+.yearlyList-ul{ width : 80%; }
+
+.underlined{
+	border-bottom-style: solid;
+  	border-bottom: 1px solid #fefefe;
+}
+
+
 /* 	================================  Introduction  ============================= */
 .introduction{
 	height: 300px;

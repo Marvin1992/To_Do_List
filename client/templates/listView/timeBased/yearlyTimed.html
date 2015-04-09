@@ -1,22 +1,38 @@
 <template name="yearlyTimed">
-	<div> {{> timeBased}} </div>
+    <div> {{> timeBased}} </div>
     <div class="time-selection">
-    	<p class="time-id">MM </p><select class="s-selectBox" name="monthlyTimed-select" id="monthlyTimed-select">
-        	<option>{{selectionMonth}}</option>
+        <p class="time-id">MM </p>
+        <select class="s-selectBox" name="monthlyTimed-select" id="monthlyTimed-select">
+            <option {{selectedIfEquals 1 queryMonth}}> 1 </option>
+            <option {{selectedIfEquals 2 queryMonth}}> 2 </option>
+            <option {{selectedIfEquals 3 queryMonth}}> 3 </option>
+            <option {{selectedIfEquals 4 queryMonth}}> 4 </option>
+            <option {{selectedIfEquals 5 queryMonth}}> 5 </option>
+            <option {{selectedIfEquals 6 queryMonth}}> 6 </option>
+            <option {{selectedIfEquals 7 queryMonth}}> 7 </option>
+            <option {{selectedIfEquals 8 queryMonth}}> 8 </option>
+            <option {{selectedIfEquals 9 queryMonth}}> 9 </option>
+            <option {{selectedIfEquals 10 queryMonth}}> 10 </option>
+            <option {{selectedIfEquals 11 queryMonth}}> 11 </option>
+            <option {{selectedIfEquals 12 queryMonth}}> 12 </option>
         </select>
-        <p class="time-id">YYYY </p><select class="s-selectBox" name="yearlyTimed-select" id="yearlyTimed-select">
-        	<option>{{selectionYear}}</option>
+        
+        <p class="time-id">YYYY </p>
+        <select class="s-selectBox" name="yearlyTimed-select" id="yearlyTimed-select">
+            {{#each NYearsFromNow 10}}
+                <option {{selectedIfEquals . ../queryYear}}>{{.}}</option>
+            {{/each}}
         </select>
     </div>
     <ul class="yearlyTimed-ul" id="yearlyTimed-ul">
-        {{#each datesInCurrentMonth}}
+        {{#each datesInMonth queryMonth queryYear}}
             <ul class="date-header yearlyTimed-ul-ul {{checkedStatus}}">
                 {{getDate}}
               
-	            {{#each todosForDay}}
-	                {{> toDoItemMonthly}}
-	            {{/each}}
+                {{#each todosForDay}}
+                    {{> toDoItemMonthly}}
+                {{/each}}
             </ul>
         {{/each}}
-	</ul>
+    </ul>
 </template>
