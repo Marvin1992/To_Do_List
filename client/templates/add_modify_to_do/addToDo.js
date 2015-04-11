@@ -37,19 +37,19 @@ Template.addToDo.events({
 		var itemName;
 
 		// assign today's value to the to-do if the user didn't put a date
-		if($(e.target).find('[name=day-select]').val() === ''){
+		if($(e.target).find('[name=day-select]').val() === 'Day'){
 			_selectedDay = _day;
 		} else {
 			_selectedDay = $(e.target).find('[name=day-select]').val();
 		}
 
-		if($(e.target).find('[name=month-select]').val() === ''){
+		if($(e.target).find('[name=month-select]').val() === 'Month'){
 			_selectedMonth = _month;
 		} else {
 			_selectedMonth = $(e.target).find('[name=month-select]').val();
 		}
 
-		if($(e.target).find('[name=year-select]').val() === ''){
+		if($(e.target).find('[name=year-select]').val() === 'Year'){
 			_selectedYear = _year;
 		} else {
 			_selectedYear = $(e.target).find('[name=year-select]').val();

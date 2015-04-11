@@ -49,7 +49,7 @@ Template.yearlyTimed.helpers({
 	todosForDay: function() {
 		return To_Dos.find({
 			author: Meteor.user().username, 
-			month: this.getMonth(), 
+			month: this.getMonth()+1, 
 			year: this.getFullYear(),
 			day: this.getDate()  
 		});

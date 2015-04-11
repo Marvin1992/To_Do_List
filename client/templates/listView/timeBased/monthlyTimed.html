@@ -1,7 +1,7 @@
 <template name="monthlyTimed">
 	<div> {{> timeBased}} </div>
 	<ul class="monthlyTimed-ul" id="monthlyTimed-ul">
-        {{#each datesInCurrentMonth}}
+        {{#each datesInMonth}}
             <ul class="date-header monthlyTimed-ul-ul {{checkedStatus}}">
                 {{getDate}}
               
