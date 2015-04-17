@@ -22,6 +22,32 @@ Template.dailyTimed.helpers({
 			year: this.getFullYear(),
 			day: this.getDate()  
 		});
+	},
+	accomplished: function() {
+		// get todays date
+		var today = new Date();
+
+		// check if "this" date lays in the past
+		if(this < today){
+			// get the current hour the loop is on
+			var current_hour = Number(String(this).split(" ")[4].split(":")[0]);
+
+			// get the items checked status
+			var item = $("#dailyTimed-ul").find("[data-mtime='" + current_hour + "']").find('#checked');
+
+			// check if it has been accomplished or not
+			if(item.hasClass('not-checked')) {
+				// mark as not accomplished if not
+				return 'notAccomplished';
+			} 
+			else if(item.hasClass('checked')){
+				// otherwise mark it as accomplished
+				return 'hasAccomplished';
+			}
+			else {
+				return '';
+			}
+		}
 	}
 });
 

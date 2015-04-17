@@ -2,7 +2,7 @@
 	<div> {{> timeBased}} </div>
 	<ul id="dailyTimed-ul" class="dailyTimed-ul">
 	{{#each hours}}
-		<li class="date-header dailyTimed-li">
+		<li class="date-header dailyTimed-li {{accomplished}}">
 			{{getHours}}
 		</li>
 
