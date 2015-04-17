@@ -32,7 +32,20 @@ Template.dailyTimed.helpers({
 			// get the current hour the loop is on
 			var current_hour = Number(String(this).split(" ")[4].split(":")[0]);
 
-			// get the items checked status
+			// get current item to get its checked status
+			var current_item = function() {
+				return To_Dos.find({
+					author: Meteor.user().username, 
+					mTime: this.getHours(),
+					month: this.getMonth() + 1, 
+					year: this.getFullYear(),
+					day: this.getDate()  
+				});
+			};
+
+			// then something like current_item.checked??
+
+			// *** HERE we need to access the object being return from the database directly ***
 			var item = $("#dailyTimed-ul").find("[data-mtime='" + current_hour + "']").find('#checked');
 
 			// check if it has been accomplished or not
