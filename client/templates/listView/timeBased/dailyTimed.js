@@ -29,37 +29,39 @@ Template.dailyTimed.helpers({
 
 		// check if "this" date lays in the past
 		if(this < today){
-			// get the current hour the loop is on
-			var current_hour = Number(String(this).split(" ")[4].split(":")[0]);
 
 			// get current item to get its checked status
-			var current_item = function() {
-				return To_Dos.find({
-					author: Meteor.user().username, 
-					mTime: this.getHours(),
-					month: this.getMonth() + 1, 
-					year: this.getFullYear(),
-					day: this.getDate()  
-				});
-			};
+			var item = To_Dos.find({
+				author: Meteor.user().username, 
+				mTime: this.getHours(),
+				month: this.getMonth() + 1, 
+				year: this.getFullYear(),
+				day: this.getDate()  
+			});
 
-			// then something like current_item.checked??
+			// get the total length of items that are present in "this" hour
+			var todos_this_hour = item.fetch().length;
 
-			// *** HERE we need to access the object being return from the database directly ***
-			var item = $("#dailyTimed-ul").find("[data-mtime='" + current_hour + "']").find('#checked');
+			// if there are to dos for "this" hour, get their checked status
+			if(todos_this_hour != 0){
+				var checkedStatus = [];
 
-			// check if it has been accomplished or not
-			if(item.hasClass('not-checked')) {
-				// mark as not accomplished if not
-				return 'notAccomplished';
-			} 
-			else if(item.hasClass('checked')){
-				// otherwise mark it as accomplished
+				for(var i=0; i<todos_this_hour; i++){
+					checkedStatus[i] = item.fetch()[i].checked;
+				}
+
+				// if any status is not-checked, return notAccomplished
+				for(var i = 0; i<checkedStatus.length; i++){
+					if(checkedStatus[i] == 'not-checked'){
+						return 'notAccomplished';
+					}
+				}
+
+				// if none have been unchecked
 				return 'hasAccomplished';
 			}
-			else {
-				return '';
-			}
+
+			return '';
 		}
 	}
 });
