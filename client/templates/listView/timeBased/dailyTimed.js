@@ -23,6 +23,17 @@ Template.dailyTimed.helpers({
 			day: this.getDate()  
 		});
 	},
+	currentTime: function(){
+		// get the current time
+		var now = new Date();
+
+		// if now matches "this" element
+		if(this.getHours() === now.getHours()){
+			return 'currentTimeStyle';
+		} else {
+			return '';
+		}
+	},
 	accomplished: function() {
 		// get todays date
 		var today = new Date();

@@ -1,7 +1,8 @@
 <template name="toDoItem">
 	<li class="date-header daily-item" data-mTime="{{mTime}}" data-timeslot="{{time}} {{day_time}}" data-date="{{day}} {{month}} {{year}}">
 		<h4 id="item-title"><img class="list-title" src="/img/list.png"> {{title}} 
-			<a href="{{pathFor 'toDosEdit'}}"> <img class="edit-title" src="/img/edit.png"> </a></h4>
+			<a href="{{pathFor 'toDosEdit'}}"> <img class="edit-title" src="/img/edit.png"> </a>
+		</h4>
 		<div id="item-opener" class="item-opener">
 			<p class="item-paragraph"><b> Description:</b> {{description}} </p>
 			<p class="item-paragraph"><b> Set time:</b> {{time}} {{day_time}} </p>
