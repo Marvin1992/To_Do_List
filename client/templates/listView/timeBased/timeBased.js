@@ -1,3 +1,4 @@
+/*
 Template.timeBased.helpers({
 	taskCount: function(){
 		// if the counter is at 0
@@ -8,3 +9,4 @@ Template.timeBased.helpers({
 		}
 	}
 });
+*/
