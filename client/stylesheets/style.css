@@ -829,8 +829,8 @@ body{
 /* 	================================  Color Feedback  ============================= */
 .is-checked{ background-color: green; }
 .not-checked{ background-color: yellow; }
-.hasAccomplished{ background-color: green; }
-.notAccomplished{ background-color: red; }
+.hasAccomplished{ background-color: green !important; }
+.notAccomplished{ background-color: red !important; }
 .currentTimeStyle{ 	
 	-webkit-transition: all 2s;
 	-moz-transition: all 2s;

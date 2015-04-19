@@ -1,7 +1,7 @@
 <template name="timeBased">
 	<div style="display: inline-block;">
 		<a style="display: inline-block;" href="{{pathFor 'dailyTimed'}}"> <button class="display-buttons">Daily</button> </a>
-		<div class="task-reminder">{{uncompletedDailyTasks}}</div>
+		<div class="task-reminder {{taskCount}}">{{uncompletedDailyTasks}}</div>
 	</div>
 	<div style="display: inline-block;">
 		<a style="display: inline-block;" href="{{pathFor 'weeklyTimed'}}"> <button class="display-buttons">Weekly</button> </a>
