@@ -1,6 +1,18 @@
 <template name="listView">
-	<a style="display: inline-block;" href="{{pathFor 'dailyList'}}"> <button class="display-buttons">Daily</button> </a>
-	<a style="display: inline-block;" href="{{pathFor 'weeklyList'}}"> <button class="display-buttons">Weekly</button> </a>
-	<a style="display: inline-block;" href="{{pathFor 'monthlyList'}}"> <button class="display-buttons">Monthly</button> </a>
-	<a style="display: inline-block;" href="{{pathFor 'yearlyList'}}"> <button class="display-buttons">Yearly</button> </a>
+	<div style="display: inline-block;">
+		<a style="display: inline-block;" href="{{pathFor 'dailyList'}}"> <button class="display-buttons">Daily</button> </a>
+		<div class="task-reminder">{{uncompletedDailyTasks}}</div>
+	</div>
+	<div style="display: inline-block;">
+		<a style="display: inline-block;" href="{{pathFor 'weeklyList'}}"> <button class="display-buttons">Weekly</button> </a>
+		<div class="task-reminder">{{uncompletedWeeklyTasks}}</div>
+	</div>
+	<div style="display: inline-block;">
+		<a style="display: inline-block;" href="{{pathFor 'monthlyList'}}"> <button class="display-buttons">Monthly</button> </a>
+		<div class="task-reminder">{{uncompletedMonthlyTasks}}</div>
+	</div>
+	<div style="display: inline-block;">
+		<a style="display: inline-block;" href="{{pathFor 'yearlyList'}}"> <button class="display-buttons">Yearly</button> </a>
+	</div>
 </template>
+
