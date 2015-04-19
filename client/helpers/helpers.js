@@ -27,3 +27,81 @@ Template.registerHelper('NYearsFromNow', function(numberOfYears) {
 Template.registerHelper('selectedIfEquals', function(left, right){
 	return left == right ? 'selected' : '';
 });
+
+Template.registerHelper('uncompletedDailyTasks', function(){
+	// get the user's todays date
+	var todaysDate = new Date();
+
+	// declare a counter variable
+	var counter = 0;
+
+	// get todays items to get its checked status
+	var items = To_Dos.find({
+		author: Meteor.user().username, 
+		month: todaysDate.getMonth() + 1, 
+		year: todaysDate.getFullYear(),
+		day: todaysDate.getDate()  
+	});
+
+	// loop through the items and count how many are not checked
+	for(var i=0; i<items.fetch().length; i++){
+		if(items.fetch()[i].checked == 'not-checked'){
+			counter++;
+		}
+	}
+
+	return counter;
+});
+
+Template.registerHelper('uncompletedWeeklyTasks', function(){
+	// get the user's todays date
+	var todaysDate = new Date();
+
+	// declare a counter variable
+	var counter = 0;
+
+	for(var i= -3; i<=3; i++){
+		var items = To_Dos.find({
+				author: Meteor.user().username, 
+				month: todaysDate.getMonth() + 1, 
+				year: todaysDate.getFullYear(),
+				day: correctDay(todaysDate.getDate(), 
+								todaysDate.getMonth() + 1, 
+								todaysDate.getFullYear(), 
+								i).day 
+		});
+
+		// loop through the items and count how many are not checked
+		for(var k=0; k<items.fetch().length; k++){
+			if(items.fetch()[k].checked == 'not-checked'){
+				counter++;
+			}
+		}
+	}
+
+	return counter;
+});
+
+Template.registerHelper('uncompletedMonthlyTasks', function(){
+	// get the user's todays date
+	var todaysDate = new Date();
+
+	// declare a counter variable
+	var counter = 0;
+
+	// get todays items to get its checked status
+	var items = To_Dos.find({
+		author: Meteor.user().username, 
+		month: todaysDate.getMonth() + 1, 
+		year: todaysDate.getFullYear() 
+	});
+
+	// loop through the items and count how many are not checked
+	for(var i=0; i<items.fetch().length; i++){
+		if(items.fetch()[i].checked == 'not-checked'){
+			counter++;
+		}
+	}
+
+	return counter;
+});

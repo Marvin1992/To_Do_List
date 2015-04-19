@@ -97,6 +97,7 @@ Template.dailyTimed.helpers({
 			}
 		}
 
+		
 		return counter;
 	}
 });
