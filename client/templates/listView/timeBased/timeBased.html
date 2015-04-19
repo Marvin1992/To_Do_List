@@ -5,11 +5,11 @@
 	</div>
 	<div style="display: inline-block;">
 		<a style="display: inline-block;" href="{{pathFor 'weeklyTimed'}}"> <button class="display-buttons">Weekly</button> </a>
-		<div class="task-reminder">{{uncompletedWeeklyTasks}}</div>
+		<div class="task-reminder {{taskCount}}">{{uncompletedWeeklyTasks}}</div>
 	</div>
 	<div style="display: inline-block;">
 		<a style="display: inline-block;" href="{{pathFor 'monthlyTimed'}}"> <button class="display-buttons">Monthly</button> </a>
-		<div class="task-reminder">{{uncompletedMonthlyTasks}}</div>
+		<div class="task-reminder {{taskCount}}">{{uncompletedMonthlyTasks}}</div>
 	</div>
 	<div style="display: inline-block;">
 		<a style="display: inline-block;" href="{{pathFor 'yearlyTimed'}}"> <button class="display-buttons">Yearly</button> </a>
