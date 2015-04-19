@@ -1,5 +1,5 @@
 <template name="dailyTimed">
-	<div> {{> timeBased}} </div>
+	<div> {{> timeBased dailyNumber=uncompletedTasks }} </div>
 	<ul id="dailyTimed-ul" class="dailyTimed-ul">
 	{{#each hours}}
 		<li class="date-header dailyTimed-li {{accomplished}} {{currentTime}}">

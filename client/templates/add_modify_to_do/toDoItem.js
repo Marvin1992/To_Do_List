@@ -27,7 +27,6 @@ Template.toDoItem.events({
 				alert(error.reason);
 			}
 		});
-
 	},
 	'click #item-title': function(event){
 		// jQuery target

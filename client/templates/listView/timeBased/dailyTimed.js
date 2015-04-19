@@ -74,6 +74,30 @@ Template.dailyTimed.helpers({
 
 			return '';
 		}
+	},
+	uncompletedTasks: function(){
+		// get the user's todays date
+		var todaysDate = new Date();
+
+		// declare a counter variable
+		var counter = 0;
+
+		// get todays items to get its checked status
+		var items = To_Dos.find({
+			author: Meteor.user().username, 
+			month: todaysDate.getMonth() + 1, 
+			year: todaysDate.getFullYear(),
+			day: todaysDate.getDate()  
+		});
+
+		// loop through the items and count how many are not checked
+		for(var i=0; i<items.fetch().length; i++){
+			if(items.fetch()[i].checked == 'not-checked'){
+				counter++;
+			}
+		}
+
+		return counter;
 	}
 });
 
