@@ -831,6 +831,7 @@ body{
 .not-checked{ background-color: yellow; }
 .hasAccomplished{ background-color: green !important; }
 .notAccomplished{ background-color: red !important; }
+.is-pending{ background-color: yellow; }
 .currentTimeStyle{ 	
 	-webkit-transition: all 2s;
 	-moz-transition: all 2s;
