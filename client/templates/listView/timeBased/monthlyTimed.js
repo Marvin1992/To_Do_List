@@ -8,17 +8,24 @@ Template.monthlyTimed.helpers({
 		});
 	},
 	checkedStatus: function(){
-		// get a reference to this
-		var $this = $(this);
+		// get the items for "this" day to further check their checked status
+		var items = To_Dos.find({
+			author: Meteor.user().username, 
+			month: this.getMonth() + 1, 
+			year: this.getFullYear(),
+			day: this.getDate()  
+		});
 
-		// if the monthly timed has a to-do add a class that can be styled
-		if($this.children().length != 0){
-			if($this.find('#checked').hasClass('not-checked')){
-				return 'unchecked';
-			} else {
-				return 'checked';
+		if(items.fetch().length != 0){
+			// loop through the items and count how many are not checked
+			for(var i=0; i<items.fetch().length; i++){
+				if(items.fetch()[i].checked == 'not-checked'){
+					return 'unchecked';
+				}
 			}
-		} 
+
+			return 'checked';
+		}
 	}
 });
 

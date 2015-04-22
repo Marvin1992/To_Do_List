@@ -55,24 +55,23 @@ Template.yearlyTimed.helpers({
 		});
 	},
 	checkedStatus: function(){
-		// get a reference to this
-		var $this = $(this);
+		// get the items for "this" day to further check their checked status
+		var items = To_Dos.find({
+			author: Meteor.user().username, 
+			month: this.getMonth() + 1, 
+			year: this.getFullYear(),
+			day: this.getDate()  
+		});
 
-		// get the current i we are on from the javascript date object
-		var current_i = Number(String($this[0]).split(" ")[2]);
-
-		// get the current element
-		var current_elem = $(".yearlyTimed-ul-ul").eq(current_i-1);
-
-		// if the yearly timed has a to-do add a class that can be styled
-		if(current_elem.children().length != 0){
-			if(current_elem.find('#checked').hasClass('not-checked')){
-				return 'unchecked';
-			} else {
-				return 'checked';
+		if(items.fetch().length != 0){
+			// loop through the items and count how many are not checked
+			for(var i=0; i<items.fetch().length; i++){
+				if(items.fetch()[i].checked == 'not-checked'){
+					return 'unchecked';
+				}
 			}
-		} else {
-			return '';
+
+			return 'checked';
 		}
 	}
 });
