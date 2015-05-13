@@ -24,6 +24,7 @@
             {{/each}}
         </select>
     </div>
+    <div class="yearly-timed">
     <ul class="yearlyTimed-ul" id="yearlyTimed-ul">
         {{#each datesInMonth queryMonth queryYear}}
             <ul class="date-header yearlyTimed-ul-ul {{checkedStatus}}">
@@ -35,4 +36,5 @@
             </ul>
         {{/each}}
     </ul>
+</div>
 </template>
