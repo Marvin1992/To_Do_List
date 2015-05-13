@@ -7,26 +7,40 @@ Template.toDoItem.events({
 
 		// variable to hold the checked off status
 		var checkedStatus;
+		var taskAccomplished;
+
+		// variable for the date
+		var now = new Date();
 
 		// toggle between checked states
 		if(this.checked === "is-checked"){
 			checkedStatus = "not-checked";
+			taskAccomplished = false;
 		} else if (this.checked === "not-checked"){
 			checkedStatus = "is-checked";
+			taskAccomplished = true;
 		}
 
 		// create an to_do object
 		var to_do_properties = {
-			checked: checkedStatus
+			checked: checkedStatus,
+			checkedTime: now
 		};
 
-		// update the To_Dos in the database by updating the to_do_properties of the currentId
-		To_Dos.update(currentToDoId, {$set: to_do_properties}, function(error) {
-			if(error) {
-				// display the error to the user
-				alert(error.reason);
-			}
+		var toDoDay = {
+			day: this.day,
+			month: this.month,
+			year: this.year,
+			hour: this.mTime
+		};
+
+		// add the day to task accomplished collection
+		Meteor.call('update_todo_status', to_do_properties, currentToDoId, toDoDay, function(error,result){
+			// display the error the user
+			if(error)
+				return alert(error.reason);
 		});
+
 	},
 	'click #item-title': function(event){
 		// jQuery target

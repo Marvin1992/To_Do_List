@@ -10,3 +10,6 @@ Template.loginButtons.rendered = function(){
 	}, 500);
 }
 */
+
+// subscribe to the days done collection
+Meteor.subscribe('days_done');

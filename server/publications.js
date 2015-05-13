@@ -4,3 +4,6 @@ Meteor.publish('the_to_do_list', function publishFunction(who) {
 });
 
 /* publish parts of the database here and subscribe on the client side with the router.js */
+Meteor.publish('days_done', function publishFunction() {
+	return Days_Done.find({userId: this.userId});
+});
